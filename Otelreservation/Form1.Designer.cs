@@ -39,6 +39,8 @@
             this.BtnKasaTanimlari = new DevExpress.XtraBars.BarButtonItem();
             this.BtnKurTanimlari = new DevExpress.XtraBars.BarButtonItem();
             this.BtnOdaTanimlari = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnTelefonTanimlari = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnUlkeTanimlari = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonMiniToolbar1 = new DevExpress.XtraBars.Ribbon.RibbonMiniToolbar(this.components);
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -52,7 +54,7 @@
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage6 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.BtnTelefonTanimlari = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnUrunGrupTanimlari = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,10 +74,12 @@
             this.BtnKasaTanimlari,
             this.BtnKurTanimlari,
             this.BtnOdaTanimlari,
-            this.BtnTelefonTanimlari});
+            this.BtnTelefonTanimlari,
+            this.BtnUlkeTanimlari,
+            this.BtnUrunGrupTanimlari});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.Margin = new System.Windows.Forms.Padding(8);
-            this.ribbonControl1.MaxItemId = 10;
+            this.ribbonControl1.MaxItemId = 12;
             this.ribbonControl1.MiniToolbars.Add(this.ribbonMiniToolbar1);
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.OptionsMenuMinWidth = 805;
@@ -160,6 +164,24 @@
             this.BtnOdaTanimlari.Name = "BtnOdaTanimlari";
             this.BtnOdaTanimlari.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnOdaTanimlari_ItemClick);
             // 
+            // BtnTelefonTanimlari
+            // 
+            this.BtnTelefonTanimlari.Caption = "Telefon Tanımları";
+            this.BtnTelefonTanimlari.Id = 9;
+            this.BtnTelefonTanimlari.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnTelefonTanimlari.ImageOptions.Image")));
+            this.BtnTelefonTanimlari.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnTelefonTanimlari.ImageOptions.LargeImage")));
+            this.BtnTelefonTanimlari.Name = "BtnTelefonTanimlari";
+            this.BtnTelefonTanimlari.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnTelefonTanimlari_ItemClick);
+            // 
+            // BtnUlkeTanimlari
+            // 
+            this.BtnUlkeTanimlari.Caption = "Ülke Tanımları";
+            this.BtnUlkeTanimlari.Id = 10;
+            this.BtnUlkeTanimlari.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnUlkeTanimlari.ImageOptions.Image")));
+            this.BtnUlkeTanimlari.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnUlkeTanimlari.ImageOptions.LargeImage")));
+            this.BtnUlkeTanimlari.Name = "BtnUlkeTanimlari";
+            this.BtnUlkeTanimlari.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnUlkeTanimlari_ItemClick);
+            // 
             // ribbonMiniToolbar1
             // 
             this.ribbonMiniToolbar1.ParentControl = this;
@@ -240,16 +262,18 @@
             this.ribbonPageGroup6.ItemLinks.Add(this.BtnKurTanimlari);
             this.ribbonPageGroup6.ItemLinks.Add(this.BtnOdaTanimlari);
             this.ribbonPageGroup6.ItemLinks.Add(this.BtnTelefonTanimlari);
+            this.ribbonPageGroup6.ItemLinks.Add(this.BtnUlkeTanimlari);
+            this.ribbonPageGroup6.ItemLinks.Add(this.BtnUrunGrupTanimlari);
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
             // 
-            // BtnTelefonTanimlari
+            // BtnUrunGrupTanimlari
             // 
-            this.BtnTelefonTanimlari.Caption = "Telefon Tanımları";
-            this.BtnTelefonTanimlari.Id = 9;
-            this.BtnTelefonTanimlari.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
-            this.BtnTelefonTanimlari.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
-            this.BtnTelefonTanimlari.Name = "BtnTelefonTanimlari";
-            this.BtnTelefonTanimlari.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnTelefonTanimlari_ItemClick);
+            this.BtnUrunGrupTanimlari.Caption = "Ürün Grup Tanımları";
+            this.BtnUrunGrupTanimlari.Id = 11;
+            this.BtnUrunGrupTanimlari.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
+            this.BtnUrunGrupTanimlari.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
+            this.BtnUrunGrupTanimlari.Name = "BtnUrunGrupTanimlari";
+            this.BtnUrunGrupTanimlari.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnUrunGrupTanimlari_ItemClick);
             // 
             // Form1
             // 
@@ -291,6 +315,8 @@
         private DevExpress.XtraBars.BarButtonItem BtnKurTanimlari;
         private DevExpress.XtraBars.BarButtonItem BtnOdaTanimlari;
         private DevExpress.XtraBars.BarButtonItem BtnTelefonTanimlari;
+        private DevExpress.XtraBars.BarButtonItem BtnUlkeTanimlari;
+        private DevExpress.XtraBars.BarButtonItem BtnUrunGrupTanimlari;
     }
 }
 
