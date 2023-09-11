@@ -41,6 +41,10 @@
             this.BtnOdaTanimlari = new DevExpress.XtraBars.BarButtonItem();
             this.BtnTelefonTanimlari = new DevExpress.XtraBars.BarButtonItem();
             this.BtnUlkeTanimlari = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnUrunGrupTanimlari = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnPersonelKarti = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonMiniToolbar1 = new DevExpress.XtraBars.Ribbon.RibbonMiniToolbar(this.components);
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -54,7 +58,6 @@
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage6 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.BtnUrunGrupTanimlari = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,10 +79,13 @@
             this.BtnOdaTanimlari,
             this.BtnTelefonTanimlari,
             this.BtnUlkeTanimlari,
-            this.BtnUrunGrupTanimlari});
+            this.BtnUrunGrupTanimlari,
+            this.barButtonItem2,
+            this.barButtonItem3,
+            this.BtnPersonelKarti});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.Margin = new System.Windows.Forms.Padding(8);
-            this.ribbonControl1.MaxItemId = 12;
+            this.ribbonControl1.MaxItemId = 15;
             this.ribbonControl1.MiniToolbars.Add(this.ribbonMiniToolbar1);
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.OptionsMenuMinWidth = 805;
@@ -182,6 +188,38 @@
             this.BtnUlkeTanimlari.Name = "BtnUlkeTanimlari";
             this.BtnUlkeTanimlari.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnUlkeTanimlari_ItemClick);
             // 
+            // BtnUrunGrupTanimlari
+            // 
+            this.BtnUrunGrupTanimlari.Caption = "Ürün Grup Tanımları";
+            this.BtnUrunGrupTanimlari.Id = 11;
+            this.BtnUrunGrupTanimlari.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnUrunGrupTanimlari.ImageOptions.Image")));
+            this.BtnUrunGrupTanimlari.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnUrunGrupTanimlari.ImageOptions.LargeImage")));
+            this.BtnUrunGrupTanimlari.Name = "BtnUrunGrupTanimlari";
+            this.BtnUrunGrupTanimlari.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnUrunGrupTanimlari_ItemClick);
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "barButtonItem2";
+            this.barButtonItem2.Id = 12;
+            this.barButtonItem2.Name = "barButtonItem2";
+            // 
+            // barButtonItem3
+            // 
+            this.barButtonItem3.Caption = "Personel Listesi";
+            this.barButtonItem3.Id = 13;
+            this.barButtonItem3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
+            this.barButtonItem3.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.LargeImage")));
+            this.barButtonItem3.Name = "barButtonItem3";
+            // 
+            // BtnPersonelKarti
+            // 
+            this.BtnPersonelKarti.Caption = "Personel Kartı";
+            this.BtnPersonelKarti.Id = 14;
+            this.BtnPersonelKarti.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
+            this.BtnPersonelKarti.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.LargeImage")));
+            this.BtnPersonelKarti.Name = "BtnPersonelKarti";
+            this.BtnPersonelKarti.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnPersonelKarti_ItemClick);
+            // 
             // ribbonMiniToolbar1
             // 
             this.ribbonMiniToolbar1.ParentControl = this;
@@ -218,8 +256,9 @@
             // 
             // ribbonPageGroup3
             // 
+            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem3);
+            this.ribbonPageGroup3.ItemLinks.Add(this.BtnPersonelKarti);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
-            this.ribbonPageGroup3.Text = "ribbonPageGroup3";
             // 
             // ribbonPage4
             // 
@@ -266,15 +305,6 @@
             this.ribbonPageGroup6.ItemLinks.Add(this.BtnUrunGrupTanimlari);
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
             // 
-            // BtnUrunGrupTanimlari
-            // 
-            this.BtnUrunGrupTanimlari.Caption = "Ürün Grup Tanımları";
-            this.BtnUrunGrupTanimlari.Id = 11;
-            this.BtnUrunGrupTanimlari.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
-            this.BtnUrunGrupTanimlari.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
-            this.BtnUrunGrupTanimlari.Name = "BtnUrunGrupTanimlari";
-            this.BtnUrunGrupTanimlari.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnUrunGrupTanimlari_ItemClick);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -317,6 +347,9 @@
         private DevExpress.XtraBars.BarButtonItem BtnTelefonTanimlari;
         private DevExpress.XtraBars.BarButtonItem BtnUlkeTanimlari;
         private DevExpress.XtraBars.BarButtonItem BtnUrunGrupTanimlari;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
+        private DevExpress.XtraBars.BarButtonItem BtnPersonelKarti;
     }
 }
 
