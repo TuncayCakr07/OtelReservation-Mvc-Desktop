@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DbOtelModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="DbOtelModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="sysdiagrams">
           <Key>
             <PropertyRef Name="diagram_id" />
@@ -104,16 +104,20 @@
           </Key>
           <Property Name="PersonelID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="AdSoyad" Type="nvarchar" MaxLength="50" />
-          <Property Name="TC" Type="char" MaxLength="11" />
-          <Property Name="Adres" Type="nvarchar" MaxLength="250" />
+          <Property Name="TC" Type="char" MaxLength="12" />
           <Property Name="Telefon" Type="nvarchar" MaxLength="20" />
           <Property Name="Mail" Type="nvarchar" MaxLength="50" />
-          <Property Name="IseGirisTarihi" Type="date" />
-          <Property Name="IstenCikisTarihi" Type="date" />
+          <Property Name="İseGirisTarihi" Type="date" />
+          <Property Name="İstenCikisTarihi" Type="date" />
           <Property Name="Departman" Type="int" />
           <Property Name="Gorev" Type="int" />
           <Property Name="Aciklama" Type="nvarchar" MaxLength="250" />
+          <Property Name="KimlikOn" Type="nvarchar" MaxLength="250" />
+          <Property Name="KimlikArka" Type="nvarchar" MaxLength="250" />
+          <Property Name="Sifre" Type="nvarchar" MaxLength="20" />
+          <Property Name="Yetki" Type="char" MaxLength="1" />
           <Property Name="Durum" Type="int" />
+          <Property Name="Adres" Type="nvarchar" MaxLength="250" />
         </EntityType>
         <EntityType Name="TblTelefon">
           <Key>
@@ -440,8 +444,7 @@
             <End Role="TblUrunGrup" EntitySet="TblUrunGrup" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DbOtelModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -569,19 +572,23 @@
           </Key>
           <Property Name="PersonelID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="AdSoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="TC" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
-          <Property Name="Adres" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="TC" Type="String" MaxLength="12" FixedLength="true" Unicode="false" />
           <Property Name="Telefon" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="IseGirisTarihi" Type="DateTime" Precision="0" />
-          <Property Name="IstenCikisTarihi" Type="DateTime" Precision="0" />
+          <Property Name="İseGirisTarihi" Type="DateTime" Precision="0" />
+          <Property Name="İstenCikisTarihi" Type="DateTime" Precision="0" />
           <Property Name="Departman" Type="Int32" />
           <Property Name="Gorev" Type="Int32" />
           <Property Name="Aciklama" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="KimlikOn" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="KimlikArka" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Sifre" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Yetki" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
           <Property Name="Durum" Type="Int32" />
           <NavigationProperty Name="TblDepartman" Relationship="Self.FK_TblPersonel_TblDepartman" FromRole="TblPersonel" ToRole="TblDepartman" />
           <NavigationProperty Name="TblDurum" Relationship="Self.FK_TblPersonel_TblDurum" FromRole="TblPersonel" ToRole="TblDurum" />
           <NavigationProperty Name="TblGorev" Relationship="Self.FK_TblPersonel_TblGorev" FromRole="TblPersonel" ToRole="TblGorev" />
+          <Property Name="Adres" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="TblTelefon">
           <Key>
@@ -1025,17 +1032,21 @@
           <EntitySetMapping Name="TblPersonel">
             <EntityTypeMapping TypeName="DbOtelModel.TblPersonel">
               <MappingFragment StoreEntitySet="TblPersonel">
+                <ScalarProperty Name="Adres" ColumnName="Adres" />
                 <ScalarProperty Name="PersonelID" ColumnName="PersonelID" />
                 <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
                 <ScalarProperty Name="TC" ColumnName="TC" />
-                <ScalarProperty Name="Adres" ColumnName="Adres" />
                 <ScalarProperty Name="Telefon" ColumnName="Telefon" />
                 <ScalarProperty Name="Mail" ColumnName="Mail" />
-                <ScalarProperty Name="IseGirisTarihi" ColumnName="IseGirisTarihi" />
-                <ScalarProperty Name="IstenCikisTarihi" ColumnName="IstenCikisTarihi" />
+                <ScalarProperty Name="İseGirisTarihi" ColumnName="İseGirisTarihi" />
+                <ScalarProperty Name="İstenCikisTarihi" ColumnName="İstenCikisTarihi" />
                 <ScalarProperty Name="Departman" ColumnName="Departman" />
                 <ScalarProperty Name="Gorev" ColumnName="Gorev" />
                 <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+                <ScalarProperty Name="KimlikOn" ColumnName="KimlikOn" />
+                <ScalarProperty Name="KimlikArka" ColumnName="KimlikArka" />
+                <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+                <ScalarProperty Name="Yetki" ColumnName="Yetki" />
                 <ScalarProperty Name="Durum" ColumnName="Durum" />
               </MappingFragment>
             </EntityTypeMapping>

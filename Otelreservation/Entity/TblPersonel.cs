@@ -17,15 +17,19 @@ namespace Otelreservation.Entity
         public int PersonelID { get; set; }
         public string AdSoyad { get; set; }
         public string TC { get; set; }
-        public string Adres { get; set; }
         public string Telefon { get; set; }
         public string Mail { get; set; }
-        public Nullable<System.DateTime> IseGirisTarihi { get; set; }
-        public Nullable<System.DateTime> IstenCikisTarihi { get; set; }
+        public Nullable<System.DateTime> İseGirisTarihi { get; set; }
+        public Nullable<System.DateTime> İstenCikisTarihi { get; set; }
         public Nullable<int> Departman { get; set; }
         public Nullable<int> Gorev { get; set; }
         public string Aciklama { get; set; }
+        public string KimlikOn { get; set; }
+        public string KimlikArka { get; set; }
+        public string Sifre { get; set; }
+        public string Yetki { get; set; }
         public Nullable<int> Durum { get; set; }
+        public string Adres { get; set; }
     
         public virtual TblDepartman TblDepartman { get; set; }
         public virtual TblDurum TblDurum { get; set; }

@@ -54,6 +54,7 @@
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.BtnGuncelle = new DevExpress.XtraEditors.SimpleButton();
             this.BtnKaydet = new DevExpress.XtraEditors.SimpleButton();
             this.BtnVazgec = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
@@ -86,6 +87,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.pictureEdit16 = new DevExpress.XtraEditors.PictureEdit();
+            this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtAdSoyad.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEditDepartman.Properties)).BeginInit();
@@ -419,6 +422,7 @@
             // 
             // groupControl2
             // 
+            this.groupControl2.Controls.Add(this.BtnGuncelle);
             this.groupControl2.Controls.Add(this.BtnKaydet);
             this.groupControl2.Controls.Add(this.BtnVazgec);
             this.groupControl2.Location = new System.Drawing.Point(2, 268);
@@ -428,14 +432,26 @@
             this.groupControl2.TabIndex = 27;
             this.groupControl2.Text = "groupControl2";
             // 
+            // BtnGuncelle
+            // 
+            this.BtnGuncelle.Appearance.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.BtnGuncelle.Appearance.Options.UseFont = true;
+            this.BtnGuncelle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnGuncelle.ImageOptions.Image")));
+            this.BtnGuncelle.Location = new System.Drawing.Point(353, 36);
+            this.BtnGuncelle.Name = "BtnGuncelle";
+            this.BtnGuncelle.Size = new System.Drawing.Size(128, 44);
+            this.BtnGuncelle.TabIndex = 2;
+            this.BtnGuncelle.Text = "Güncelle";
+            this.BtnGuncelle.Click += new System.EventHandler(this.BtnGuncelle_Click);
+            // 
             // BtnKaydet
             // 
             this.BtnKaydet.Appearance.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.BtnKaydet.Appearance.Options.UseFont = true;
             this.BtnKaydet.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnKaydet.ImageOptions.Image")));
-            this.BtnKaydet.Location = new System.Drawing.Point(368, 45);
+            this.BtnKaydet.Location = new System.Drawing.Point(488, 36);
             this.BtnKaydet.Name = "BtnKaydet";
-            this.BtnKaydet.Size = new System.Drawing.Size(128, 35);
+            this.BtnKaydet.Size = new System.Drawing.Size(128, 44);
             this.BtnKaydet.TabIndex = 1;
             this.BtnKaydet.Text = "Kaydet";
             this.BtnKaydet.Click += new System.EventHandler(this.BtnKaydet_Click);
@@ -445,9 +461,9 @@
             this.BtnVazgec.Appearance.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.BtnVazgec.Appearance.Options.UseFont = true;
             this.BtnVazgec.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnVazgec.ImageOptions.Image")));
-            this.BtnVazgec.Location = new System.Drawing.Point(218, 45);
+            this.BtnVazgec.Location = new System.Drawing.Point(218, 36);
             this.BtnVazgec.Name = "BtnVazgec";
-            this.BtnVazgec.Size = new System.Drawing.Size(128, 35);
+            this.BtnVazgec.Size = new System.Drawing.Size(128, 44);
             this.BtnVazgec.TabIndex = 0;
             this.BtnVazgec.Text = "Vazgeç";
             this.BtnVazgec.Click += new System.EventHandler(this.BtnVazgec_Click);
@@ -564,6 +580,8 @@
             // 
             // xtraTabPage2
             // 
+            this.xtraTabPage2.Controls.Add(this.labelControl13);
+            this.xtraTabPage2.Controls.Add(this.labelControl12);
             this.xtraTabPage2.Controls.Add(this.groupControl4);
             this.xtraTabPage2.Controls.Add(this.TxtAciklama);
             this.xtraTabPage2.Controls.Add(this.labelControl11);
@@ -589,8 +607,10 @@
             this.pictureEditKimlikArka.Location = new System.Drawing.Point(394, 5);
             this.pictureEditKimlikArka.Name = "pictureEditKimlikArka";
             this.pictureEditKimlikArka.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.pictureEditKimlikArka.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             this.pictureEditKimlikArka.Size = new System.Drawing.Size(371, 191);
             this.pictureEditKimlikArka.TabIndex = 1;
+            this.pictureEditKimlikArka.EditValueChanged += new System.EventHandler(this.pictureEditKimlikArka_EditValueChanged);
             // 
             // pictureEditKimlikOn
             // 
@@ -600,12 +620,13 @@
             this.pictureEditKimlikOn.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             this.pictureEditKimlikOn.Size = new System.Drawing.Size(383, 191);
             this.pictureEditKimlikOn.TabIndex = 0;
+            this.pictureEditKimlikOn.EditValueChanged += new System.EventHandler(this.pictureEditKimlikOn_EditValueChanged);
             // 
             // TxtAciklama
             // 
             this.TxtAciklama.Location = new System.Drawing.Point(124, 18);
             this.TxtAciklama.Name = "TxtAciklama";
-            this.TxtAciklama.Size = new System.Drawing.Size(645, 141);
+            this.TxtAciklama.Size = new System.Drawing.Size(645, 103);
             this.TxtAciklama.TabIndex = 24;
             // 
             // labelControl11
@@ -784,6 +805,22 @@
             this.pictureEdit16.Size = new System.Drawing.Size(29, 27);
             this.pictureEdit16.TabIndex = 9;
             // 
+            // labelControl12
+            // 
+            this.labelControl12.Location = new System.Drawing.Point(12, 143);
+            this.labelControl12.Name = "labelControl12";
+            this.labelControl12.Size = new System.Drawing.Size(82, 16);
+            this.labelControl12.TabIndex = 27;
+            this.labelControl12.Text = "labelControl12";
+            // 
+            // labelControl13
+            // 
+            this.labelControl13.Location = new System.Drawing.Point(356, 143);
+            this.labelControl13.Name = "labelControl13";
+            this.labelControl13.Size = new System.Drawing.Size(82, 16);
+            this.labelControl13.TabIndex = 28;
+            this.labelControl13.Text = "labelControl13";
+            // 
             // FrmPersonelKarti
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -912,5 +949,8 @@
         private DevExpress.XtraEditors.PictureEdit pictureEdit18;
         private DevExpress.XtraEditors.DateEdit dateEditGiris;
         private DevExpress.XtraEditors.DateEdit dateEditCikis;
+        private DevExpress.XtraEditors.SimpleButton BtnGuncelle;
+        private DevExpress.XtraEditors.LabelControl labelControl13;
+        private DevExpress.XtraEditors.LabelControl labelControl12;
     }
 }

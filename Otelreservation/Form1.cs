@@ -82,5 +82,12 @@ namespace Otelreservation
             Formlar.Personel.FrmPersonelKarti fr= new Formlar.Personel.FrmPersonelKarti();
             fr.Show();
         }
+
+        private void BtnPersonelListesi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Formlar.Personel.FrmPersonelListesi fr=new Formlar.Personel.FrmPersonelListesi();
+            fr.MdiParent = this;
+            fr.Show();
+        }
     }
 }
