@@ -89,5 +89,11 @@ namespace Otelreservation
             fr.MdiParent = this;
             fr.Show();
         }
+
+        private void BnMisafirKarti_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Formlar.Misafir.FrmMisafirKarti fr = new Formlar.Misafir.FrmMisafirKarti();
+            fr.Show();
+        }
     }
 }

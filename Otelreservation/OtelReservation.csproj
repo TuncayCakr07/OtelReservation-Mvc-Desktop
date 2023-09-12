@@ -64,6 +64,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entity\ilceler.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\iller.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entity\Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -126,6 +132,12 @@
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Misafir\FrmMisafirKarti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Misafir\FrmMisafirKarti.Designer.cs">
+      <DependentUpon>FrmMisafirKarti.cs</DependentUpon>
     </Compile>
     <Compile Include="Formlar\Personel\FrmPersonelKarti.cs">
       <SubType>Form</SubType>
@@ -204,6 +216,9 @@
     <Compile Include="Repositories\Repository.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Misafir\FrmMisafirKarti.resx">
+      <DependentUpon>FrmMisafirKarti.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formlar\Personel\FrmPersonelKarti.resx">
       <DependentUpon>FrmPersonelKarti.cs</DependentUpon>
