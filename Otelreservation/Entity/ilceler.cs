@@ -14,8 +14,18 @@ namespace Otelreservation.Entity
     
     public partial class ilceler
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public ilceler()
+        {
+            this.TblMisafir = new HashSet<TblMisafir>();
+        }
+    
         public int id { get; set; }
         public string ilce { get; set; }
         public int sehir { get; set; }
+    
+        public virtual iller iller { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TblMisafir> TblMisafir { get; set; }
     }
 }

@@ -139,6 +139,12 @@
     <Compile Include="Formlar\Misafir\FrmMisafirKarti.Designer.cs">
       <DependentUpon>FrmMisafirKarti.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formlar\Misafir\FrmMisafirListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Misafir\FrmMisafirListesi.Designer.cs">
+      <DependentUpon>FrmMisafirListesi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formlar\Personel\FrmPersonelKarti.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -219,6 +225,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formlar\Misafir\FrmMisafirKarti.resx">
       <DependentUpon>FrmMisafirKarti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Misafir\FrmMisafirListesi.resx">
+      <DependentUpon>FrmMisafirListesi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formlar\Personel\FrmPersonelKarti.resx">
       <DependentUpon>FrmPersonelKarti.cs</DependentUpon>

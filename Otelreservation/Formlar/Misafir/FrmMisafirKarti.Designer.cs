@@ -114,6 +114,7 @@
             this.BtnVazgec.Size = new System.Drawing.Size(128, 44);
             this.BtnVazgec.TabIndex = 0;
             this.BtnVazgec.Text = "Vazgeç";
+            this.BtnVazgec.Click += new System.EventHandler(this.BtnVazgec_Click);
             // 
             // TxtAdres
             // 
@@ -170,6 +171,7 @@
             this.pictureEditKimlikArka.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             this.pictureEditKimlikArka.Size = new System.Drawing.Size(371, 191);
             this.pictureEditKimlikArka.TabIndex = 1;
+            this.pictureEditKimlikArka.EditValueChanged += new System.EventHandler(this.pictureEditKimlikArka_EditValueChanged);
             // 
             // pictureEditKimlikOn
             // 
@@ -179,6 +181,7 @@
             this.pictureEditKimlikOn.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             this.pictureEditKimlikOn.Size = new System.Drawing.Size(383, 191);
             this.pictureEditKimlikOn.TabIndex = 0;
+            this.pictureEditKimlikOn.EditValueChanged += new System.EventHandler(this.pictureEditKimlikOn_EditValueChanged);
             // 
             // TxtAciklama
             // 
@@ -366,6 +369,7 @@
             this.BtnKaydet.Size = new System.Drawing.Size(128, 44);
             this.BtnKaydet.TabIndex = 1;
             this.BtnKaydet.Text = "Kaydet";
+            this.BtnKaydet.Click += new System.EventHandler(this.BtnKaydet_Click);
             // 
             // labelControl5
             // 
