@@ -75,14 +75,15 @@ namespace Otelreservation.Formlar.Misafir
 
         private void lookUpEditSehir_EditValueChanged(object sender, EventArgs e)
         {
-            //int secilen;
-            //secilen=int.Parse(lookUpEditSehir.EditValue.ToString());
-            //lookUpEditİlce.Properties.DataSource= (from x in db.ilceler select new
-            //{
-            //    Id=x.id,
-            //    İlçe=x.ilce,
-            //    Şehir=x.sehir,
-            //}).Where(y=> y.Şehir==secilen).ToList();
+            int secilen;
+            secilen = int.Parse(lookUpEditSehir.EditValue.ToString());
+            lookUpEditİlce.Properties.DataSource = (from x in db.ilceler
+                                                    select new
+                                                    {
+                                                         Id = x.id,
+                                                        İlçe = x.ilce,
+                                                        Şehir = x.sehir,
+                                                    }).Where(y => y.Şehir == secilen).ToList();
         }
       
 
@@ -101,23 +102,71 @@ namespace Otelreservation.Formlar.Misafir
             this.Close();
         }
 
+        private void BtnGuncelle_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var deger = repo.Find(x => x.MisafirID == id);
+                deger.AdSoyad = TxtAdSoyad.Text;
+                deger.TC = TxtTcNo.Text;
+                deger.Telefon = TxtTelefon.Text;
+                deger.Mail = TxtMail.Text;
+                deger.Adres = TxtAdres.Text;
+                deger.Aciklama = TxtAciklama.Text;
+                deger.KimlikFoto1 = resim1;
+                deger.KimlikFoto2 = resim2;
+                deger.Ulke = int.Parse(lookUpEditUlke.EditValue.ToString());
+                deger.sehir = int.Parse(lookUpEditSehir.EditValue.ToString());
+                deger.ilce = int.Parse(lookUpEditİlce.EditValue.ToString());
+                deger.Durum = 1;
+                repo.TUpdate(deger);
+                XtraMessageBox.Show("Misafir Bilgileri Güncellendi!", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
+            catch (FormatException ex)
+            {
+                // Girilen değerleri uygun bir formatta dönüştürme hatası
+                XtraMessageBox.Show("Geçersiz bir değer girdiniz: " + ex.Message, "HATA!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                // Diğer genel hata durumları için
+                XtraMessageBox.Show("Bir hata oluştu: " + ex.Message, "HATA!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
         private void BtnKaydet_Click(object sender, EventArgs e)
         {
-            t.AdSoyad=TxtAdSoyad.Text;
-            t.TC=TxtTcNo.Text;
-            t.Telefon=TxtTelefon.Text;
-            t.Mail=TxtMail.Text;
-            t.Adres=TxtAdres.Text;
-            t.Aciklama=TxtAciklama.Text;
-            t.Durum = 1;
-            t.sehir = int.Parse(lookUpEditSehir.EditValue.ToString());
-            t.ilce = int.Parse(lookUpEditİlce.EditValue.ToString());
-            t.Ulke=int.Parse(lookUpEditUlke.EditValue.ToString());
-            t.KimlikFoto1 = resim1;
-            t.KimlikFoto2=resim2;
-            repo.TAdd(t);
-            XtraMessageBox.Show("Misafir Sisteme Başarıyla Kaydedildi!","Bilgi",MessageBoxButtons.OK, MessageBoxIcon.Information);
-            this.Close();
+            try
+            {
+                t.AdSoyad = TxtAdSoyad.Text;
+                t.TC = TxtTcNo.Text;
+                t.Telefon = TxtTelefon.Text;
+                t.Mail = TxtMail.Text;
+                t.Adres = TxtAdres.Text;
+                t.Aciklama = TxtAciklama.Text;
+                t.Durum = 1;
+                t.sehir = int.Parse(lookUpEditSehir.EditValue.ToString());
+                t.ilce = int.Parse(lookUpEditİlce.EditValue.ToString());
+                t.Ulke = int.Parse(lookUpEditUlke.EditValue.ToString());
+                t.KimlikFoto1 = resim1;
+                t.KimlikFoto2 = resim2;
+                repo.TAdd(t);
+                XtraMessageBox.Show("Misafir Sisteme Başarıyla Kaydedildi!", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
+            catch (FormatException ex)
+            {
+                // Girilen değerleri uygun bir formatta dönüştürme hatası
+                XtraMessageBox.Show("Geçersiz bir değer girdiniz: " + ex.Message, "HATA!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                // Diğer genel hata durumları için
+                XtraMessageBox.Show("Bir hata oluştu: " + ex.Message, "HATA!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
     }
 }

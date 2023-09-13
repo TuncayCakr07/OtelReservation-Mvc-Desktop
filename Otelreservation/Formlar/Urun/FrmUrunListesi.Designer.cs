@@ -1,6 +1,6 @@
-﻿namespace Otelreservation.Formlar.Misafir
+﻿namespace Otelreservation.Formlar.Urun
 {
-    partial class FrmMisafirListesi
+    partial class FrmUrunListesi
     {
         /// <summary>
         /// Required designer variable.
@@ -44,22 +44,22 @@
             this.gridControl1.TabIndex = 1;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
-            this.gridControl1.DoubleClick += new System.EventHandler(this.gridControl1_DoubleClick);
             // 
             // gridView1
             // 
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             // 
-            // FrmMisafirListesi
+            // FrmUrunListesi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(882, 353);
             this.Controls.Add(this.gridControl1);
-            this.Name = "FrmMisafirListesi";
-            this.Text = "Misafir Listesi";
-            this.Load += new System.EventHandler(this.FrmMisafirListesi_Load);
+            this.Name = "FrmUrunListesi";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Ürün Listesi";
+            this.Load += new System.EventHandler(this.FrmUrunListesi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
