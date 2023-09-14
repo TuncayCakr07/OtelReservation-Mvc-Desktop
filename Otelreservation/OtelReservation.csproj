@@ -127,6 +127,9 @@
     <Compile Include="Entity\TblUrunGrup.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entity\TblUrunHareket.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -217,6 +220,24 @@
     <Compile Include="Formlar\Tanımlamalar\FrmUrunGrup.Designer.cs">
       <DependentUpon>FrmUrunGrup.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formlar\Urun\FrmUrunCikishareket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Urun\FrmUrunCikishareket.Designer.cs">
+      <DependentUpon>FrmUrunCikishareket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Urun\FrmUrunGirisHareket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Urun\FrmUrunGirisHareket.Designer.cs">
+      <DependentUpon>FrmUrunGirisHareket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Urun\FrmUrunHareketKarti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Urun\FrmUrunHareketKarti.Designer.cs">
+      <DependentUpon>FrmUrunHareketKarti.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formlar\Urun\FrmUrunKarti.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -276,6 +297,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formlar\Tanımlamalar\FrmUrunGrup.resx">
       <DependentUpon>FrmUrunGrup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Urun\FrmUrunCikishareket.resx">
+      <DependentUpon>FrmUrunCikishareket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Urun\FrmUrunGirisHareket.resx">
+      <DependentUpon>FrmUrunGirisHareket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Urun\FrmUrunHareketKarti.resx">
+      <DependentUpon>FrmUrunHareketKarti.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formlar\Urun\FrmUrunKarti.resx">
       <DependentUpon>FrmUrunKarti.cs</DependentUpon>

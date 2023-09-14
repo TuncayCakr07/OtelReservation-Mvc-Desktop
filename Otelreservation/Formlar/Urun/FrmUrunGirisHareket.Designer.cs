@@ -1,6 +1,6 @@
 ﻿namespace Otelreservation.Formlar.Urun
 {
-    partial class FrmUrunListesi
+    partial class FrmUrunGirisHareket
     {
         /// <summary>
         /// Required designer variable.
@@ -51,16 +51,16 @@
             this.gridView1.Name = "gridView1";
             this.gridView1.DoubleClick += new System.EventHandler(this.gridView1_DoubleClick);
             // 
-            // FrmUrunListesi
+            // FrmUrunGirisHareket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(882, 353);
             this.Controls.Add(this.gridControl1);
-            this.Name = "FrmUrunListesi";
+            this.Name = "FrmUrunGirisHareket";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Ürün Listesi";
-            this.Load += new System.EventHandler(this.FrmUrunListesi_Load);
+            this.Text = "Ürün Giriş Hareketleri";
+            this.Load += new System.EventHandler(this.FrmUrunGirisHareket_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);

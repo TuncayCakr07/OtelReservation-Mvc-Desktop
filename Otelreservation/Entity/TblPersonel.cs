@@ -14,6 +14,12 @@ namespace Otelreservation.Entity
     
     public partial class TblPersonel
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public TblPersonel()
+        {
+            this.TblUrunHareket = new HashSet<TblUrunHareket>();
+        }
+    
         public int PersonelID { get; set; }
         public string AdSoyad { get; set; }
         public string TC { get; set; }
@@ -34,5 +40,7 @@ namespace Otelreservation.Entity
         public virtual TblDepartman TblDepartman { get; set; }
         public virtual TblDurum TblDurum { get; set; }
         public virtual TblGorev TblGorev { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TblUrunHareket> TblUrunHareket { get; set; }
     }
 }

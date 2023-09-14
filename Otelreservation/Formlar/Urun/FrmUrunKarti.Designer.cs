@@ -356,9 +356,9 @@
             this.lookUpEditDurum.Name = "lookUpEditDurum";
             this.lookUpEditDurum.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lookUpEditDurum.Properties.DisplayMember = "İlçe";
+            this.lookUpEditDurum.Properties.DisplayMember = "DurumAd";
             this.lookUpEditDurum.Properties.NullText = "Durum Seçiniz..";
-            this.lookUpEditDurum.Properties.ValueMember = "Id";
+            this.lookUpEditDurum.Properties.ValueMember = "DurumID";
             this.lookUpEditDurum.Size = new System.Drawing.Size(637, 22);
             this.lookUpEditDurum.TabIndex = 22;
             // 
@@ -401,9 +401,9 @@
             this.lookUpEditBirim.Name = "lookUpEditBirim";
             this.lookUpEditBirim.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lookUpEditBirim.Properties.DisplayMember = "İlçe";
+            this.lookUpEditBirim.Properties.DisplayMember = "BirimAD";
             this.lookUpEditBirim.Properties.NullText = "Birim Seçiniz..";
-            this.lookUpEditBirim.Properties.ValueMember = "Id";
+            this.lookUpEditBirim.Properties.ValueMember = "BirimID";
             this.lookUpEditBirim.Size = new System.Drawing.Size(637, 22);
             this.lookUpEditBirim.TabIndex = 13;
             // 
@@ -413,9 +413,9 @@
             this.lookUpEditUrunGrup.Name = "lookUpEditUrunGrup";
             this.lookUpEditUrunGrup.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lookUpEditUrunGrup.Properties.DisplayMember = "Şehir";
+            this.lookUpEditUrunGrup.Properties.DisplayMember = "UrunGrupAd";
             this.lookUpEditUrunGrup.Properties.NullText = "Ürün Grubu Seçiniz..";
-            this.lookUpEditUrunGrup.Properties.ValueMember = "Id";
+            this.lookUpEditUrunGrup.Properties.ValueMember = "UrunGrupID";
             this.lookUpEditUrunGrup.Size = new System.Drawing.Size(637, 22);
             this.lookUpEditUrunGrup.TabIndex = 10;
             // 
@@ -464,6 +464,7 @@
             this.BtnGuncelle.Size = new System.Drawing.Size(128, 44);
             this.BtnGuncelle.TabIndex = 2;
             this.BtnGuncelle.Text = "Güncelle";
+            this.BtnGuncelle.Click += new System.EventHandler(this.BtnGuncelle_Click);
             // 
             // BtnKaydet
             // 
@@ -475,6 +476,7 @@
             this.BtnKaydet.Size = new System.Drawing.Size(128, 44);
             this.BtnKaydet.TabIndex = 1;
             this.BtnKaydet.Text = "Kaydet";
+            this.BtnKaydet.Click += new System.EventHandler(this.BtnKaydet_Click);
             // 
             // BtnVazgec
             // 
@@ -486,6 +488,7 @@
             this.BtnVazgec.Size = new System.Drawing.Size(128, 44);
             this.BtnVazgec.TabIndex = 0;
             this.BtnVazgec.Text = "Vazgeç";
+            this.BtnVazgec.Click += new System.EventHandler(this.BtnVazgec_Click);
             // 
             // FrmUrunKarti
             // 
@@ -499,6 +502,7 @@
             this.Name = "FrmUrunKarti";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Yeni Ürün Kartı";
+            this.Load += new System.EventHandler(this.FrmUrunKarti_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();

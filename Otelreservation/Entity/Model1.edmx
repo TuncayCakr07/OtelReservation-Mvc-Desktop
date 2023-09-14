@@ -173,6 +173,18 @@
           <Property Name="UrunGrupAd" Type="nvarchar" MaxLength="50" />
           <Property Name="Durum" Type="int" />
         </EntityType>
+        <EntityType Name="TblUrunHareket">
+          <Key>
+            <PropertyRef Name="HareketID" />
+          </Key>
+          <Property Name="HareketID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Urun" Type="int" />
+          <Property Name="HareketTuru" Type="nvarchar" MaxLength="10" />
+          <Property Name="Miktar" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Tarih" Type="date" />
+          <Property Name="Personel" Type="int" />
+          <Property Name="Aciklama" Type="nvarchar" MaxLength="250" />
+        </EntityType>
         <Association Name="FK_ilceler_iller">
           <End Role="iller" Type="Self.iller" Multiplicity="1" />
           <End Role="ilceler" Type="Self.ilceler" Multiplicity="*" />
@@ -413,6 +425,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_TblUrunHareket_TblPersonel">
+          <End Role="TblPersonel" Type="Self.TblPersonel" Multiplicity="0..1" />
+          <End Role="TblUrunHareket" Type="Self.TblUrunHareket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblPersonel">
+              <PropertyRef Name="PersonelID" />
+            </Principal>
+            <Dependent Role="TblUrunHareket">
+              <PropertyRef Name="Personel" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TblUrunHareket_TblUrun">
+          <End Role="TblUrun" Type="Self.TblUrun" Multiplicity="0..1" />
+          <End Role="TblUrunHareket" Type="Self.TblUrunHareket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblUrun">
+              <PropertyRef Name="UrunID" />
+            </Principal>
+            <Dependent Role="TblUrunHareket">
+              <PropertyRef Name="Urun" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="DbOtelModelStoreContainer">
           <EntitySet Name="ilceler" EntityType="Self.ilceler" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="iller" EntityType="Self.iller" Schema="dbo" store:Type="Tables" />
@@ -430,6 +466,7 @@
           <EntitySet Name="TblUlke" EntityType="Self.TblUlke" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblUrun" EntityType="Self.TblUrun" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblUrunGrup" EntityType="Self.TblUrunGrup" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblUrunHareket" EntityType="Self.TblUrunHareket" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_ilceler_iller" Association="Self.FK_ilceler_iller">
             <End Role="iller" EntitySet="iller" />
             <End Role="ilceler" EntitySet="ilceler" />
@@ -509,6 +546,14 @@
           <AssociationSet Name="FK_TblUrunGrup_TblDurum" Association="Self.FK_TblUrunGrup_TblDurum">
             <End Role="TblDurum" EntitySet="TblDurum" />
             <End Role="TblUrunGrup" EntitySet="TblUrunGrup" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TblUrunHareket_TblPersonel" Association="Self.FK_TblUrunHareket_TblPersonel">
+            <End Role="TblPersonel" EntitySet="TblPersonel" />
+            <End Role="TblUrunHareket" EntitySet="TblUrunHareket" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TblUrunHareket_TblUrun" Association="Self.FK_TblUrunHareket_TblUrun">
+            <End Role="TblUrun" EntitySet="TblUrun" />
+            <End Role="TblUrunHareket" EntitySet="TblUrunHareket" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -660,6 +705,7 @@
           <NavigationProperty Name="TblDurum" Relationship="Self.FK_TblPersonel_TblDurum" FromRole="TblPersonel" ToRole="TblDurum" />
           <NavigationProperty Name="TblGorev" Relationship="Self.FK_TblPersonel_TblGorev" FromRole="TblPersonel" ToRole="TblGorev" />
           <Property Name="Adres" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TblUrunHareket" Relationship="DbOtelModel.FK_TblUrunHareket_TblPersonel" FromRole="TblPersonel" ToRole="TblUrunHareket" />
         </EntityType>
         <EntityType Name="TblTelefon">
           <Key>
@@ -693,6 +739,7 @@
           <NavigationProperty Name="TblBirim" Relationship="Self.FK_TblUrun_TblBirim" FromRole="TblUrun" ToRole="TblBirim" />
           <NavigationProperty Name="TblDurum" Relationship="Self.FK_TblUrun_TblDurum" FromRole="TblUrun" ToRole="TblDurum" />
           <NavigationProperty Name="TblUrunGrup" Relationship="Self.FK_TblUrun_TblUrunGrup" FromRole="TblUrun" ToRole="TblUrunGrup" />
+          <NavigationProperty Name="TblUrunHareket" Relationship="DbOtelModel.FK_TblUrunHareket_TblUrun" FromRole="TblUrun" ToRole="TblUrunHareket" />
         </EntityType>
         <EntityType Name="TblUrunGrup">
           <Key>
@@ -1005,6 +1052,15 @@
             <End Role="iller" EntitySet="iller" />
             <End Role="TblMisafir" EntitySet="TblMisafir" />
           </AssociationSet>
+          <EntitySet Name="TblUrunHareket" EntityType="DbOtelModel.TblUrunHareket" />
+          <AssociationSet Name="FK_TblUrunHareket_TblPersonel" Association="DbOtelModel.FK_TblUrunHareket_TblPersonel">
+            <End Role="TblPersonel" EntitySet="TblPersonel" />
+            <End Role="TblUrunHareket" EntitySet="TblUrunHareket" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TblUrunHareket_TblUrun" Association="DbOtelModel.FK_TblUrunHareket_TblUrun">
+            <End Role="TblUrun" EntitySet="TblUrun" />
+            <End Role="TblUrunHareket" EntitySet="TblUrunHareket" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="ilceler">
           <Key>
@@ -1058,6 +1114,44 @@
             </Principal>
             <Dependent Role="TblMisafir">
               <PropertyRef Name="sehir" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="TblUrunHareket">
+          <Key>
+            <PropertyRef Name="HareketID" />
+          </Key>
+          <Property Name="HareketID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Urun" Type="Int32" />
+          <Property Name="HareketTuru" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Miktar" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Tarih" Type="DateTime" Precision="0" />
+          <Property Name="Personel" Type="Int32" />
+          <Property Name="Aciklama" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TblPersonel" Relationship="DbOtelModel.FK_TblUrunHareket_TblPersonel" FromRole="TblUrunHareket" ToRole="TblPersonel" />
+          <NavigationProperty Name="TblUrun" Relationship="DbOtelModel.FK_TblUrunHareket_TblUrun" FromRole="TblUrunHareket" ToRole="TblUrun" />
+        </EntityType>
+        <Association Name="FK_TblUrunHareket_TblPersonel">
+          <End Type="DbOtelModel.TblPersonel" Role="TblPersonel" Multiplicity="0..1" />
+          <End Type="DbOtelModel.TblUrunHareket" Role="TblUrunHareket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblPersonel">
+              <PropertyRef Name="PersonelID" />
+            </Principal>
+            <Dependent Role="TblUrunHareket">
+              <PropertyRef Name="Personel" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TblUrunHareket_TblUrun">
+          <End Type="DbOtelModel.TblUrun" Role="TblUrun" Multiplicity="0..1" />
+          <End Type="DbOtelModel.TblUrunHareket" Role="TblUrunHareket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblUrun">
+              <PropertyRef Name="UrunID" />
+            </Principal>
+            <Dependent Role="TblUrunHareket">
+              <PropertyRef Name="Urun" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1248,6 +1342,19 @@
               <MappingFragment StoreEntitySet="iller">
                 <ScalarProperty Name="sehir" ColumnName="sehir" />
                 <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblUrunHareket">
+            <EntityTypeMapping TypeName="DbOtelModel.TblUrunHareket">
+              <MappingFragment StoreEntitySet="TblUrunHareket">
+                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+                <ScalarProperty Name="Personel" ColumnName="Personel" />
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+                <ScalarProperty Name="Miktar" ColumnName="Miktar" />
+                <ScalarProperty Name="HareketTuru" ColumnName="HareketTuru" />
+                <ScalarProperty Name="Urun" ColumnName="Urun" />
+                <ScalarProperty Name="HareketID" ColumnName="HareketID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

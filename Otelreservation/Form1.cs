@@ -115,5 +115,26 @@ namespace Otelreservation
             Formlar.Urun.FrmUrunKarti fr = new Formlar.Urun.FrmUrunKarti();
             fr.Show();
         }
+
+        private void BtnUrunGirisHareket_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Formlar.Urun.FrmUrunGirisHareket fr = new Formlar.Urun.FrmUrunGirisHareket();
+            fr.MdiParent = this;
+            fr.Show();
+        }
+
+        private void BtnUrunCikisHareket_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+            Formlar.Urun.FrmUrunCikishareket fr = new Formlar.Urun.FrmUrunCikishareket();
+            fr.MdiParent = this;
+            fr.Show();
+        }
+
+        private void BtnYeniUrunHareket_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Formlar.Urun.FrmUrunHareketKarti fr = new Formlar.Urun.FrmUrunHareketKarti();
+            fr.Show();
+        }
     }
 }
