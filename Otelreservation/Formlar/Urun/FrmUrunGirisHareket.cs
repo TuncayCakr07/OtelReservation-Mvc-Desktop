@@ -21,7 +21,7 @@ namespace Otelreservation.Formlar.Urun
 
         private void FrmUrunGirisHareket_Load(object sender, EventArgs e)
         {
-            gridControl1.DataSource = (from x in db.TblUrunHareket
+                gridControl1.DataSource = (from x in db.TblUrunHareket
                                        select new
                                        {
                                            x.HareketID,

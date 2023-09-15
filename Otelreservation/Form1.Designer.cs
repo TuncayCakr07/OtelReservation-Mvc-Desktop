@@ -53,6 +53,12 @@
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.BtnUrunCikisHareket = new DevExpress.XtraBars.BarButtonItem();
             this.BtnYeniUrunHareket = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnButunRezervasyonlar = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnYeniRezervasyonKarti = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnAktifRezervasyonlar = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnİptalEdilenRezervasyonlar = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnGecmisRezervasyonlar = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnGelecekRezervasyonlar = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonMiniToolbar1 = new DevExpress.XtraBars.Ribbon.RibbonMiniToolbar(this.components);
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -66,9 +72,22 @@
             this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage5 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage6 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.ribbonPage7 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup10 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.barCheckItem2 = new DevExpress.XtraBars.BarCheckItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem11 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -102,10 +121,26 @@
             this.BtnUrunGirisHareket,
             this.barButtonItem3,
             this.BtnUrunCikisHareket,
-            this.BtnYeniUrunHareket});
+            this.BtnYeniUrunHareket,
+            this.BtnButunRezervasyonlar,
+            this.BtnYeniRezervasyonKarti,
+            this.BtnAktifRezervasyonlar,
+            this.BtnİptalEdilenRezervasyonlar,
+            this.BtnGecmisRezervasyonlar,
+            this.BtnGelecekRezervasyonlar,
+            this.barCheckItem2,
+            this.barButtonItem1,
+            this.barButtonItem4,
+            this.barButtonItem5,
+            this.barButtonItem6,
+            this.barButtonItem7,
+            this.barButtonItem8,
+            this.barButtonItem9,
+            this.barButtonItem10,
+            this.barButtonItem11});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.Margin = new System.Windows.Forms.Padding(8);
-            this.ribbonControl1.MaxItemId = 23;
+            this.ribbonControl1.MaxItemId = 39;
             this.ribbonControl1.MiniToolbars.Add(this.ribbonMiniToolbar1);
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.OptionsMenuMinWidth = 805;
@@ -115,9 +150,10 @@
             this.ribbonPage3,
             this.ribbonPage4,
             this.ribbonPage5,
-            this.ribbonPage6});
-            this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
-            this.ribbonControl1.Size = new System.Drawing.Size(1182, 183);
+            this.ribbonPage6,
+            this.ribbonPage7});
+            this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2019;
+            this.ribbonControl1.Size = new System.Drawing.Size(1182, 199);
             // 
             // BtnMisafirListesi
             // 
@@ -279,8 +315,8 @@
             // 
             this.BtnUrunGirisHareket.Caption = "Ürün Giriş Hareketleri";
             this.BtnUrunGirisHareket.Id = 19;
-            this.BtnUrunGirisHareket.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.BtnUrunGirisHareket.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.BtnUrunGirisHareket.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnUrunGirisHareket.ImageOptions.Image")));
+            this.BtnUrunGirisHareket.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnUrunGirisHareket.ImageOptions.LargeImage")));
             this.BtnUrunGirisHareket.Name = "BtnUrunGirisHareket";
             this.BtnUrunGirisHareket.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnUrunGirisHareket_ItemClick);
             // 
@@ -294,8 +330,8 @@
             // 
             this.BtnUrunCikisHareket.Caption = "Ürün Çıkış Hareketleri";
             this.BtnUrunCikisHareket.Id = 21;
-            this.BtnUrunCikisHareket.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
-            this.BtnUrunCikisHareket.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.LargeImage")));
+            this.BtnUrunCikisHareket.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnUrunCikisHareket.ImageOptions.Image")));
+            this.BtnUrunCikisHareket.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnUrunCikisHareket.ImageOptions.LargeImage")));
             this.BtnUrunCikisHareket.Name = "BtnUrunCikisHareket";
             this.BtnUrunCikisHareket.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnUrunCikisHareket_ItemClick);
             // 
@@ -303,10 +339,64 @@
             // 
             this.BtnYeniUrunHareket.Caption = "Yeni Ürün Hareketi";
             this.BtnYeniUrunHareket.Id = 22;
-            this.BtnYeniUrunHareket.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.Image")));
-            this.BtnYeniUrunHareket.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.LargeImage")));
+            this.BtnYeniUrunHareket.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnYeniUrunHareket.ImageOptions.Image")));
+            this.BtnYeniUrunHareket.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnYeniUrunHareket.ImageOptions.LargeImage")));
             this.BtnYeniUrunHareket.Name = "BtnYeniUrunHareket";
             this.BtnYeniUrunHareket.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnYeniUrunHareket_ItemClick);
+            // 
+            // BtnButunRezervasyonlar
+            // 
+            this.BtnButunRezervasyonlar.Caption = "Bütün Rezervasyon Listesi";
+            this.BtnButunRezervasyonlar.Id = 23;
+            this.BtnButunRezervasyonlar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnButunRezervasyonlar.ImageOptions.Image")));
+            this.BtnButunRezervasyonlar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnButunRezervasyonlar.ImageOptions.LargeImage")));
+            this.BtnButunRezervasyonlar.Name = "BtnButunRezervasyonlar";
+            this.BtnButunRezervasyonlar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnButunRezervasyonlar_ItemClick);
+            // 
+            // BtnYeniRezervasyonKarti
+            // 
+            this.BtnYeniRezervasyonKarti.Caption = "Yeni Rezervasyon Kartı";
+            this.BtnYeniRezervasyonKarti.Id = 24;
+            this.BtnYeniRezervasyonKarti.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnYeniRezervasyonKarti.ImageOptions.Image")));
+            this.BtnYeniRezervasyonKarti.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnYeniRezervasyonKarti.ImageOptions.LargeImage")));
+            this.BtnYeniRezervasyonKarti.Name = "BtnYeniRezervasyonKarti";
+            this.BtnYeniRezervasyonKarti.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnYeniRezervasyonKarti_ItemClick);
+            // 
+            // BtnAktifRezervasyonlar
+            // 
+            this.BtnAktifRezervasyonlar.Caption = "Aktif Rezervasyonlar Listesi";
+            this.BtnAktifRezervasyonlar.Id = 25;
+            this.BtnAktifRezervasyonlar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnAktifRezervasyonlar.ImageOptions.Image")));
+            this.BtnAktifRezervasyonlar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnAktifRezervasyonlar.ImageOptions.LargeImage")));
+            this.BtnAktifRezervasyonlar.Name = "BtnAktifRezervasyonlar";
+            this.BtnAktifRezervasyonlar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnAktifRezervasyonlar_ItemClick);
+            // 
+            // BtnİptalEdilenRezervasyonlar
+            // 
+            this.BtnİptalEdilenRezervasyonlar.Caption = "İptal Edilen Rezervasyonlar Listesi";
+            this.BtnİptalEdilenRezervasyonlar.Id = 26;
+            this.BtnİptalEdilenRezervasyonlar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnİptalEdilenRezervasyonlar.ImageOptions.Image")));
+            this.BtnİptalEdilenRezervasyonlar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnİptalEdilenRezervasyonlar.ImageOptions.LargeImage")));
+            this.BtnİptalEdilenRezervasyonlar.Name = "BtnİptalEdilenRezervasyonlar";
+            this.BtnİptalEdilenRezervasyonlar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnİptalEdilenRezervasyonlar_ItemClick);
+            // 
+            // BtnGecmisRezervasyonlar
+            // 
+            this.BtnGecmisRezervasyonlar.Caption = "Geçmiş Rezervasyonlar";
+            this.BtnGecmisRezervasyonlar.Id = 27;
+            this.BtnGecmisRezervasyonlar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnGecmisRezervasyonlar.ImageOptions.Image")));
+            this.BtnGecmisRezervasyonlar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnGecmisRezervasyonlar.ImageOptions.LargeImage")));
+            this.BtnGecmisRezervasyonlar.Name = "BtnGecmisRezervasyonlar";
+            this.BtnGecmisRezervasyonlar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnGecmisRezervasyonlar_ItemClick);
+            // 
+            // BtnGelecekRezervasyonlar
+            // 
+            this.BtnGelecekRezervasyonlar.Caption = "Gelecek Rezervasyonlar Listesi";
+            this.BtnGelecekRezervasyonlar.Id = 28;
+            this.BtnGelecekRezervasyonlar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnGelecekRezervasyonlar.ImageOptions.Image")));
+            this.BtnGelecekRezervasyonlar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnGelecekRezervasyonlar.ImageOptions.LargeImage")));
+            this.BtnGelecekRezervasyonlar.Name = "BtnGelecekRezervasyonlar";
+            this.BtnGelecekRezervasyonlar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnGelecekRezervasyonlar_ItemClick);
             // 
             // ribbonMiniToolbar1
             // 
@@ -316,6 +406,7 @@
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup1});
+            this.ribbonPage1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ribbonPage1.ImageOptions.Image")));
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "Ana Sayfa";
             // 
@@ -327,6 +418,7 @@
             // 
             this.ribbonPage2.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup2});
+            this.ribbonPage2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ribbonPage2.ImageOptions.Image")));
             this.ribbonPage2.Name = "ribbonPage2";
             this.ribbonPage2.Text = "Müşteri İşlemleri";
             // 
@@ -340,6 +432,7 @@
             // 
             this.ribbonPage3.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup3});
+            this.ribbonPage3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ribbonPage3.ImageOptions.Image")));
             this.ribbonPage3.Name = "ribbonPage3";
             this.ribbonPage3.Text = "Personel İşlemleri";
             // 
@@ -355,6 +448,7 @@
             this.ribbonPageGroup4,
             this.ribbonPageGroup7,
             this.ribbonPageGroup8});
+            this.ribbonPage4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ribbonPage4.ImageOptions.Image")));
             this.ribbonPage4.Name = "ribbonPage4";
             this.ribbonPage4.Text = "Ürün İşlemleri";
             // 
@@ -378,19 +472,31 @@
             // ribbonPage5
             // 
             this.ribbonPage5.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup5});
+            this.ribbonPageGroup5,
+            this.ribbonPageGroup9});
+            this.ribbonPage5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ribbonPage5.ImageOptions.Image")));
             this.ribbonPage5.Name = "ribbonPage5";
             this.ribbonPage5.Text = "Rezervasyon İşlemleri";
             // 
             // ribbonPageGroup5
             // 
+            this.ribbonPageGroup5.ItemLinks.Add(this.BtnButunRezervasyonlar);
+            this.ribbonPageGroup5.ItemLinks.Add(this.BtnYeniRezervasyonKarti);
             this.ribbonPageGroup5.Name = "ribbonPageGroup5";
-            this.ribbonPageGroup5.Text = "ribbonPageGroup5";
+            // 
+            // ribbonPageGroup9
+            // 
+            this.ribbonPageGroup9.ItemLinks.Add(this.BtnAktifRezervasyonlar);
+            this.ribbonPageGroup9.ItemLinks.Add(this.BtnİptalEdilenRezervasyonlar);
+            this.ribbonPageGroup9.ItemLinks.Add(this.BtnGecmisRezervasyonlar);
+            this.ribbonPageGroup9.ItemLinks.Add(this.BtnGelecekRezervasyonlar);
+            this.ribbonPageGroup9.Name = "ribbonPageGroup9";
             // 
             // ribbonPage6
             // 
             this.ribbonPage6.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup6});
+            this.ribbonPage6.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ribbonPage6.ImageOptions.Image")));
             this.ribbonPage6.Name = "ribbonPage6";
             this.ribbonPage6.Text = "Tanımlamalar";
             // 
@@ -411,6 +517,105 @@
             // xtraTabbedMdiManager1
             // 
             this.xtraTabbedMdiManager1.MdiParent = this;
+            // 
+            // ribbonPage7
+            // 
+            this.ribbonPage7.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup10});
+            this.ribbonPage7.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ribbonPage7.ImageOptions.Image")));
+            this.ribbonPage7.Name = "ribbonPage7";
+            this.ribbonPage7.Text = "Araçlar";
+            // 
+            // ribbonPageGroup10
+            // 
+            this.ribbonPageGroup10.ItemLinks.Add(this.barButtonItem1);
+            this.ribbonPageGroup10.ItemLinks.Add(this.barButtonItem4);
+            this.ribbonPageGroup10.ItemLinks.Add(this.barButtonItem5);
+            this.ribbonPageGroup10.ItemLinks.Add(this.barButtonItem6);
+            this.ribbonPageGroup10.ItemLinks.Add(this.barButtonItem7);
+            this.ribbonPageGroup10.ItemLinks.Add(this.barButtonItem8);
+            this.ribbonPageGroup10.ItemLinks.Add(this.barButtonItem9);
+            this.ribbonPageGroup10.ItemLinks.Add(this.barButtonItem10);
+            this.ribbonPageGroup10.ItemLinks.Add(this.barButtonItem11);
+            this.ribbonPageGroup10.Name = "ribbonPageGroup10";
+            // 
+            // barCheckItem2
+            // 
+            this.barCheckItem2.Caption = "barCheckItem2";
+            this.barCheckItem2.Id = 29;
+            this.barCheckItem2.Name = "barCheckItem2";
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Ajanda";
+            this.barButtonItem1.Id = 30;
+            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.barButtonItem1.Name = "barButtonItem1";
+            // 
+            // barButtonItem4
+            // 
+            this.barButtonItem4.Caption = "Kurlar";
+            this.barButtonItem4.Id = 31;
+            this.barButtonItem4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
+            this.barButtonItem4.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.LargeImage")));
+            this.barButtonItem4.Name = "barButtonItem4";
+            // 
+            // barButtonItem5
+            // 
+            this.barButtonItem5.Caption = "Youtube";
+            this.barButtonItem5.Id = 32;
+            this.barButtonItem5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.Image")));
+            this.barButtonItem5.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.LargeImage")));
+            this.barButtonItem5.Name = "barButtonItem5";
+            // 
+            // barButtonItem6
+            // 
+            this.barButtonItem6.Caption = "Google";
+            this.barButtonItem6.Id = 33;
+            this.barButtonItem6.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.Image")));
+            this.barButtonItem6.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.LargeImage")));
+            this.barButtonItem6.Name = "barButtonItem6";
+            // 
+            // barButtonItem7
+            // 
+            this.barButtonItem7.Caption = "Word";
+            this.barButtonItem7.Id = 34;
+            this.barButtonItem7.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.ImageOptions.Image")));
+            this.barButtonItem7.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.ImageOptions.LargeImage")));
+            this.barButtonItem7.Name = "barButtonItem7";
+            // 
+            // barButtonItem8
+            // 
+            this.barButtonItem8.Caption = "Excel";
+            this.barButtonItem8.Id = 35;
+            this.barButtonItem8.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem8.ImageOptions.Image")));
+            this.barButtonItem8.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem8.ImageOptions.LargeImage")));
+            this.barButtonItem8.Name = "barButtonItem8";
+            // 
+            // barButtonItem9
+            // 
+            this.barButtonItem9.Caption = "Şifre İşlemleri";
+            this.barButtonItem9.Id = 36;
+            this.barButtonItem9.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem9.ImageOptions.Image")));
+            this.barButtonItem9.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem9.ImageOptions.LargeImage")));
+            this.barButtonItem9.Name = "barButtonItem9";
+            // 
+            // barButtonItem10
+            // 
+            this.barButtonItem10.Caption = "Yetkiler";
+            this.barButtonItem10.Id = 37;
+            this.barButtonItem10.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem10.ImageOptions.Image")));
+            this.barButtonItem10.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem10.ImageOptions.LargeImage")));
+            this.barButtonItem10.Name = "barButtonItem10";
+            // 
+            // barButtonItem11
+            // 
+            this.barButtonItem11.Caption = "Yardım !";
+            this.barButtonItem11.Id = 38;
+            this.barButtonItem11.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem11.ImageOptions.Image")));
+            this.barButtonItem11.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem11.ImageOptions.LargeImage")));
+            this.barButtonItem11.Name = "barButtonItem11";
             // 
             // Form1
             // 
@@ -470,6 +675,25 @@
         private DevExpress.XtraBars.BarButtonItem BtnUrunCikisHareket;
         private DevExpress.XtraBars.BarButtonItem BtnYeniUrunHareket;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
+        private DevExpress.XtraBars.BarButtonItem BtnButunRezervasyonlar;
+        private DevExpress.XtraBars.BarButtonItem BtnYeniRezervasyonKarti;
+        private DevExpress.XtraBars.BarButtonItem BtnAktifRezervasyonlar;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup9;
+        private DevExpress.XtraBars.BarButtonItem BtnİptalEdilenRezervasyonlar;
+        private DevExpress.XtraBars.BarButtonItem BtnGecmisRezervasyonlar;
+        private DevExpress.XtraBars.BarButtonItem BtnGelecekRezervasyonlar;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage7;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup10;
+        private DevExpress.XtraBars.BarCheckItem barCheckItem2;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem5;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem6;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem7;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem8;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem9;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem10;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem11;
     }
 }
 

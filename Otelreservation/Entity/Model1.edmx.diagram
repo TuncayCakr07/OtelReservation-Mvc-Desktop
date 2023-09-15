@@ -44,6 +44,10 @@
         <EntityTypeShape EntityType="DbOtelModel.TblUrunHareket" Width="1.5" PointX="9.75" PointY="12.5" />
         <AssociationConnector Association="DbOtelModel.FK_TblUrunHareket_TblPersonel" />
         <AssociationConnector Association="DbOtelModel.FK_TblUrunHareket_TblUrun" />
+        <EntityTypeShape EntityType="DbOtelModel.TblRezervasyon" Width="1.5" PointX="5.25" PointY="18.75" />
+        <AssociationConnector Association="DbOtelModel.FK_TblRezervasyon_TblDurum" />
+        <AssociationConnector Association="DbOtelModel.FK_TblRezervasyon_TblMisafir" />
+        <AssociationConnector Association="DbOtelModel.FK_TblRezervasyon_TblOda" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

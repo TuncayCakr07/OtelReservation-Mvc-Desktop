@@ -14,6 +14,12 @@ namespace Otelreservation.Entity
     
     public partial class TblMisafir
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public TblMisafir()
+        {
+            this.TblRezervasyon = new HashSet<TblRezervasyon>();
+        }
+    
         public int MisafirID { get; set; }
         public string AdSoyad { get; set; }
         public string TC { get; set; }
@@ -31,5 +37,7 @@ namespace Otelreservation.Entity
         public virtual TblDurum TblDurum { get; set; }
         public virtual ilceler ilceler { get; set; }
         public virtual iller iller { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TblRezervasyon> TblRezervasyon { get; set; }
     }
 }

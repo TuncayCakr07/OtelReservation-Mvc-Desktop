@@ -1,6 +1,6 @@
-﻿namespace Otelreservation.Formlar.Urun
+﻿namespace Otelreservation.Formlar.Rezervasyon
 {
-    partial class FrmUrunCikishareket
+    partial class FrmİptalEdilenRezervasyonlar
     {
         /// <summary>
         /// Required designer variable.
@@ -41,7 +41,7 @@
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.Size = new System.Drawing.Size(882, 353);
-            this.gridControl1.TabIndex = 2;
+            this.gridControl1.TabIndex = 3;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
@@ -49,18 +49,17 @@
             // 
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
-            this.gridView1.DoubleClick += new System.EventHandler(this.gridView1_DoubleClick);
             // 
-            // FrmUrunCikishareket
+            // FrmİptalEdilenRezervasyonlar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(882, 353);
             this.Controls.Add(this.gridControl1);
-            this.Name = "FrmUrunCikishareket";
+            this.Name = "FrmİptalEdilenRezervasyonlar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Ürün Çıkış Hareketleri";
-            this.Load += new System.EventHandler(this.FrmUrunCikishareket_Load);
+            this.Text = "İptal Edilen Rezervasyonlar Listesi";
+            this.Load += new System.EventHandler(this.FrmİptalEdilenRezervasyonlar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);

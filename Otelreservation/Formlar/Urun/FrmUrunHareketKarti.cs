@@ -69,7 +69,7 @@ namespace Otelreservation.Formlar.Urun
                 t.HareketTuru = comboBox1.Text;
                 t.Miktar = decimal.Parse(TxtMiktar.Text);
                 t.Aciklama = TxtAciklama.Text;
-                t.Personel = int.Parse(lookUpEditUrun.EditValue.ToString());
+                t.Personel = int.Parse(lookUpEditPersonel.EditValue.ToString());
                 repo.TAdd(t);
                 XtraMessageBox.Show("Ürün Hareketi Başarıyla Kaydedildi!", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 this.Close();
@@ -85,6 +85,33 @@ namespace Otelreservation.Formlar.Urun
                 XtraMessageBox.Show("Bir hata oluştu: " + ex.Message, "HATA!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
          
+        }
+
+        private void BtnGuncelle_Click(object sender, EventArgs e)
+        {
+            var urun = repo.Find(x => x.HareketID == id);
+            try
+            {
+                urun.Urun = int.Parse(lookUpEditUrun.EditValue.ToString());
+                urun.Tarih = DateTime.Parse(dateEdit1.Text);
+                urun.HareketTuru = comboBox1.Text;
+                urun.Miktar = decimal.Parse(TxtMiktar.Text);
+                urun.Aciklama = TxtAciklama.Text;
+                urun.Personel = int.Parse(lookUpEditPersonel.EditValue.ToString());
+                repo.TUpdate(urun);
+                XtraMessageBox.Show("Ürün Hareketi Güncellendi!", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                this.Close();
+            }
+            catch (FormatException ex)
+            {
+                // Girilen değerleri uygun bir formatta dönüştürme hatası
+                XtraMessageBox.Show("Geçersiz bir değer girdiniz: " + ex.Message, "HATA!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                // Diğer genel hata durumları için
+                XtraMessageBox.Show("Bir hata oluştu: " + ex.Message, "HATA!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

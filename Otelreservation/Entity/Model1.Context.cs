@@ -42,5 +42,6 @@ namespace Otelreservation.Entity
         public virtual DbSet<ilceler> ilceler { get; set; }
         public virtual DbSet<iller> iller { get; set; }
         public virtual DbSet<TblUrunHareket> TblUrunHareket { get; set; }
+        public virtual DbSet<TblRezervasyon> TblRezervasyon { get; set; }
     }
 }

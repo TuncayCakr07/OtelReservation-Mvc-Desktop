@@ -14,6 +14,12 @@ namespace Otelreservation.Entity
     
     public partial class TblOda
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public TblOda()
+        {
+            this.TblRezervasyon = new HashSet<TblRezervasyon>();
+        }
+    
         public int OdaID { get; set; }
         public string OdaNo { get; set; }
         public string Kat { get; set; }
@@ -23,5 +29,7 @@ namespace Otelreservation.Entity
         public Nullable<int> Durum { get; set; }
     
         public virtual TblDurum TblDurum { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TblRezervasyon> TblRezervasyon { get; set; }
     }
 }
