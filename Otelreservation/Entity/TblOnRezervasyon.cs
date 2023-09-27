@@ -12,24 +12,16 @@ namespace Otelreservation.Entity
     using System;
     using System.Collections.Generic;
     
-    public partial class TblRezervasyon
+    public partial class TblOnRezervasyon
     {
-        public int RezervasyonID { get; set; }
-        public Nullable<int> Misafir { get; set; }
+        public int ID { get; set; }
+        public string Mail { get; set; }
+        public string AdSoyad { get; set; }
         public Nullable<System.DateTime> GirisTarih { get; set; }
         public Nullable<System.DateTime> CikisTarih { get; set; }
         public string Kisi { get; set; }
-        public Nullable<int> Oda { get; set; }
-        public string RezervasyonAdSoyad { get; set; }
         public string Telefon { get; set; }
         public string Aciklama { get; set; }
-        public Nullable<int> Durum { get; set; }
-        public Nullable<int> Kisi1 { get; set; }
-        public Nullable<int> Kisi2 { get; set; }
-        public Nullable<int> Kisi3 { get; set; }
-    
-        public virtual TblDurum TblDurum { get; set; }
-        public virtual TblMisafir TblMisafir { get; set; }
-        public virtual TblOda TblOda { get; set; }
+        public Nullable<System.DateTime> Tarih { get; set; }
     }
 }

@@ -25,6 +25,7 @@ namespace Otelreservation.Formlar.Personel
         Repository<TblPersonel> repo = new Repository<TblPersonel>();
         private void FrmPersonelKarti_Load(object sender, EventArgs e)
         {
+            string resim1, resim2;
             this.Text = id.ToString();
             if (id!=0)
             {
@@ -40,8 +41,13 @@ namespace Otelreservation.Formlar.Personel
                 TxtSifre.Text = personel.Sifre; 
                 labelControl12.Text=personel.KimlikOn;
                 labelControl13.Text=personel.KimlikArka;
+                resim1 = personel.KimlikOn;
+                resim2 = personel.KimlikArka;
                 lookUpEditDepartman.EditValue = personel.Departman;
                 lookUpEditGorev.EditValue = personel.Gorev;
+
+                pictureEditKimlikOn.LoadAsync(personel.KimlikOn);
+                pictureEditKimlikArka.LoadAsync(personel.KimlikArka);
 
             }
        

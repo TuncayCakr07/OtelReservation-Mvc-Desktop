@@ -124,5 +124,25 @@ namespace Otelreservation.Formlar.Urun
             }
 
         }
+
+        private void rdb1_CheckedChanged(object sender, EventArgs e)
+        {
+            TxtKdv.Text = "1";
+        }
+
+        private void rdb8_CheckedChanged(object sender, EventArgs e)
+        {
+            TxtKdv.Text = "8";
+        }
+
+        private void rdb10_CheckedChanged(object sender, EventArgs e)
+        {
+            TxtKdv.Text = "10";
+        }
+
+        private void rdb20_CheckedChanged(object sender, EventArgs e)
+        {
+            TxtKdv.Text = "20";
+        }
     }
 }

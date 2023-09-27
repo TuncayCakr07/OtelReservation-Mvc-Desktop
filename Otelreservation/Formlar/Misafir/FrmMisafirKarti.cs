@@ -27,23 +27,32 @@ namespace Otelreservation.Formlar.Misafir
 
         private void FrmMisafirKarti_Load(object sender, EventArgs e)
         {
-            //Kart Guncelleme
-            if (id != 0)
+            try
             {
-                var misafir = repo.Find(x => x.MisafirID == id);
-                TxtAdSoyad.Text = misafir.AdSoyad;
-                TxtTcNo.Text = misafir.TC;
-                TxtAdres.Text = misafir.Adres;
-                TxtTelefon.Text = misafir.Telefon;
-                TxtMail.Text = misafir.Mail;
-                TxtAciklama.Text = misafir.Aciklama;
-                resim1 = misafir.KimlikFoto1;
-                resim2 = misafir.KimlikFoto2;
-                lookUpEditSehir.EditValue = misafir.sehir;
-                lookUpEditUlke.EditValue = misafir.Ulke;
-                lookUpEditİlce.EditValue = misafir.ilce;
+                if (id != 0)
+                {
+                    var misafir = repo.Find(x => x.MisafirID == id);
+                    TxtAdSoyad.Text = misafir.AdSoyad;
+                    TxtTcNo.Text = misafir.TC;
+                    TxtAdres.Text = misafir.Adres;
+                    TxtTelefon.Text = misafir.Telefon;
+                    TxtMail.Text = misafir.Mail;
+                    TxtAciklama.Text = misafir.Aciklama;
+                    resim1 = misafir.KimlikFoto1;
+                    resim2 = misafir.KimlikFoto2;
+                    pictureEditKimlikOn.LoadAsync(resim1);
+                    pictureEditKimlikArka.LoadAsync(resim2);
+                    lookUpEditSehir.EditValue = misafir.sehir;
+                    lookUpEditUlke.EditValue = misafir.Ulke;
+                    lookUpEditİlce.EditValue = misafir.ilce;
 
+                }
             }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show("Hata oluştu Lütfen Sutünları Kontrol Ediniz !: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+           
 
 
             //Country List

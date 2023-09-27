@@ -125,6 +125,7 @@
             this.rdb20.TabStop = true;
             this.rdb20.Text = "%20";
             this.rdb20.UseVisualStyleBackColor = true;
+            this.rdb20.CheckedChanged += new System.EventHandler(this.rdb20_CheckedChanged);
             // 
             // rdb10
             // 
@@ -136,6 +137,7 @@
             this.rdb10.TabStop = true;
             this.rdb10.Text = "%10";
             this.rdb10.UseVisualStyleBackColor = true;
+            this.rdb10.CheckedChanged += new System.EventHandler(this.rdb10_CheckedChanged);
             // 
             // rdb8
             // 
@@ -147,6 +149,7 @@
             this.rdb8.TabStop = true;
             this.rdb8.Text = "%8";
             this.rdb8.UseVisualStyleBackColor = true;
+            this.rdb8.CheckedChanged += new System.EventHandler(this.rdb8_CheckedChanged);
             // 
             // rdb1
             // 
@@ -158,6 +161,7 @@
             this.rdb1.TabStop = true;
             this.rdb1.Text = "%1";
             this.rdb1.UseVisualStyleBackColor = true;
+            this.rdb1.CheckedChanged += new System.EventHandler(this.rdb1_CheckedChanged);
             // 
             // TxtKdv
             // 
@@ -499,6 +503,7 @@
             this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.groupControl3);
             this.Controls.Add(this.groupControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmUrunKarti";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Yeni Ürün Kartı";
