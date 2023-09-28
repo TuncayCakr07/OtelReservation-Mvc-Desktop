@@ -47,11 +47,16 @@
     <Reference Include="CefSharp.WinForms, Version=116.0.230.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=MSIL">
       <HintPath>..\packages\CefSharp.WinForms.116.0.230\lib\net462\CefSharp.WinForms.dll</HintPath>
     </Reference>
+    <Reference Include="DevExpress.Charts.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.Desktop.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Printing.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v21.2.UI, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraBars.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v21.2.UI, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v21.2.Wizard, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraEditors.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraGrid.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -98,6 +103,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\OdaDurum_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity\sysdiagrams.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -171,6 +179,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formlar\AnaForm\FrmAnaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\AnaForm\FrmAnaForm.Designer.cs">
+      <DependentUpon>FrmAnaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formlar\Araclar\FrmGoogle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,6 +202,18 @@
     </Compile>
     <Compile Include="Formlar\Araclar\FrmYabanciSorgulama.Designer.cs">
       <DependentUpon>FrmYabanciSorgulama.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Grafikler\FrmGrafik1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Grafikler\FrmGrafik1.Designer.cs">
+      <DependentUpon>FrmGrafik1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Grafikler\FrmGrafik2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Grafikler\FrmGrafik2.Designer.cs">
+      <DependentUpon>FrmGrafik2.cs</DependentUpon>
     </Compile>
     <Compile Include="Formlar\Misafir\FrmMisafirKarti.cs">
       <SubType>Form</SubType>
@@ -351,6 +377,12 @@
     <Compile Include="Formlar\WebSite\FrmGidenMesajlar.Designer.cs">
       <DependentUpon>FrmGidenMesajlar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formlar\WebSite\FrmHakkimizda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\WebSite\FrmHakkimizda.Designer.cs">
+      <DependentUpon>FrmHakkimizda.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formlar\WebSite\FrmMesajKarti.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -381,11 +413,20 @@
     <Compile Include="Formlar\WebSite\Frmİletisim.Designer.cs">
       <DependentUpon>Frmİletisim.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formlar\WebSite\FrmAdresKarti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\WebSite\FrmAdresKarti.Designer.cs">
+      <DependentUpon>FrmAdresKarti.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Repository.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\AnaForm\FrmAnaForm.resx">
+      <DependentUpon>FrmAnaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formlar\Araclar\FrmGoogle.resx">
       <DependentUpon>FrmGoogle.cs</DependentUpon>
@@ -395,6 +436,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formlar\Araclar\FrmYabanciSorgulama.resx">
       <DependentUpon>FrmYabanciSorgulama.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Grafikler\FrmGrafik1.resx">
+      <DependentUpon>FrmGrafik1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Grafikler\FrmGrafik2.resx">
+      <DependentUpon>FrmGrafik2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formlar\Misafir\FrmMisafirKarti.resx">
       <DependentUpon>FrmMisafirKarti.cs</DependentUpon>
@@ -477,6 +524,9 @@
     <EmbeddedResource Include="Formlar\WebSite\FrmGidenMesajlar.resx">
       <DependentUpon>FrmGidenMesajlar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\WebSite\FrmHakkimizda.resx">
+      <DependentUpon>FrmHakkimizda.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formlar\WebSite\FrmMesajKarti.resx">
       <DependentUpon>FrmMesajKarti.cs</DependentUpon>
     </EmbeddedResource>
@@ -491,6 +541,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formlar\WebSite\Frmİletisim.resx">
       <DependentUpon>Frmİletisim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\WebSite\FrmAdresKarti.resx">
+      <DependentUpon>FrmAdresKarti.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

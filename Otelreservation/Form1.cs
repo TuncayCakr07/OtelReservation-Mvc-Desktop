@@ -254,5 +254,38 @@ namespace Otelreservation
             fr.MdiParent = this;
             fr.Show();
         }
+
+        private void BtnAdresKarti_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Formlar.WebSite.FrmAdresKarti fr = new Formlar.WebSite.FrmAdresKarti();
+            fr.Show();
+        }
+
+        private void BtnHakkimdaKarti_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Formlar.WebSite.FrmHakkimizda fr = new Formlar.WebSite.FrmHakkimizda();
+            fr.Show();
+        }
+
+        private void BtnHizliBakis_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Formlar.AnaForm.FrmAnaForm fr = new Formlar.AnaForm.FrmAnaForm();
+            fr.MdiParent = this;
+            fr.Show();
+        }
+
+        private void BtnGrafik1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Formlar.Grafikler.FrmGrafik2 fr = new Formlar.Grafikler.FrmGrafik2();
+            fr.MdiParent = this;
+            fr.Show();
+        }
+
+        private void BtnUrunStokGrafigi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Formlar.Grafikler.FrmGrafik1 fr = new Formlar.Grafikler.FrmGrafik1();
+            fr.MdiParent = this;
+            fr.Show();
+        }
     }
 }

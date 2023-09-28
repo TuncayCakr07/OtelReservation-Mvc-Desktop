@@ -569,6 +569,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="OdaDurum" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="DbOtelModelStoreContainer">
           <EntitySet Name="ilceler" EntityType="Self.ilceler" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="iller" EntityType="Self.iller" Schema="dbo" store:Type="Tables" />
@@ -1222,6 +1223,7 @@
           <EntitySet Name="TblMesaj" EntityType="DbOtelModel.TblMesaj" />
           <EntitySet Name="TblMesajGuest" EntityType="DbOtelModel.TblMesajGuest" />
           <EntitySet Name="TblHakkimda" EntityType="DbOtelModel.TblHakkimda" />
+          <FunctionImport Name="OdaDurum" ReturnType="Collection(DbOtelModel.OdaDurum_Result)" />
         </EntityContainer>
         <EntityType Name="ilceler">
           <Key>
@@ -1439,6 +1441,10 @@
           <Property Name="Hakkimda3" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
           <Property Name="Hakkimda4" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
         </EntityType>
+        <ComplexType Name="OdaDurum_Result">
+          <Property Type="String" Name="DurumAd" Nullable="true" MaxLength="20" />
+          <Property Type="Int32" Name="Sayı" Nullable="true" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1733,6 +1739,14 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="OdaDurum" FunctionName="DbOtelModel.Store.OdaDurum">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DbOtelModel.OdaDurum_Result">
+                <ScalarProperty Name="DurumAd" ColumnName="DurumAd" />
+                <ScalarProperty Name="Sayı" ColumnName="Sayı" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
