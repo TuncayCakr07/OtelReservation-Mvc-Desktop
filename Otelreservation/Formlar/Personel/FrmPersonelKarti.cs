@@ -26,7 +26,7 @@ namespace Otelreservation.Formlar.Personel
         private void FrmPersonelKarti_Load(object sender, EventArgs e)
         {
             string resim1, resim2;
-            this.Text = id.ToString();
+            //this.Text = id.ToString();
             if (id!=0)
             {
                 var personel = repo.Find(x => x.PersonelID == id);

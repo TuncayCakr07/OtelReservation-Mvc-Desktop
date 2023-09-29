@@ -87,6 +87,8 @@ namespace Otelreservation.Formlar.Rezervasyon
                 lookUpEditKisi1.EditValue = reservation.Kisi1;
                 lookUpEditKisi2.EditValue = reservation.Kisi2;
                 lookUpEditKisi3.EditValue = reservation.Kisi3;
+                TxtToplam.Text = reservation.Tutar.ToString();
+                TxtOdaNo.Text = reservation.TblOda.OdaNo;
 
             }
 
@@ -133,6 +135,7 @@ namespace Otelreservation.Formlar.Rezervasyon
                 t.Telefon=TxtTelefon.Text;
                 t.Aciklama=TxtAciklama.Text;
                 t.Durum=int.Parse(lookUpEditRezDurum.EditValue.ToString());
+                t.Tutar=decimal.Parse(TxtToplam.Text);
                 repo.TAdd(t);
 
                 XtraMessageBox.Show("Rezervasyon Başarıyla Oluşturuldu!", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -158,10 +161,17 @@ namespace Otelreservation.Formlar.Rezervasyon
 
         private void BtnGuncelle_Click(object sender, EventArgs e)
         {
-
+         
             var rezervasyon = repo.Find(x => x.RezervasyonID == id);
             try
             {
+                if (lookUpEditRezDurum.Text=="Çıkış Yapıldı")
+                {
+                    Repository<TblOda> repo2 = new Repository<TblOda>();
+                    var odadurum = repo2.Find(x => x.OdaID == rezervasyon.Oda);
+                    odadurum.Durum = 3;
+                    repo2.TUpdate(odadurum);
+                }
                 rezervasyon.Misafir = int.Parse(lookUpEditMisafir.EditValue.ToString());
                 rezervasyon.GirisTarih = DateTime.Parse(dateEditGirisTarih.Text);
                 rezervasyon.CikisTarih = DateTime.Parse(dateEditCikisTarih.Text);
@@ -193,8 +203,9 @@ namespace Otelreservation.Formlar.Rezervasyon
                     rezervasyon.Kisi3 = int.Parse(lookUpEditKisi3.EditValue.ToString());
                 }
                 rezervasyon.Aciklama = TxtAciklama.Text;
+               rezervasyon.Tutar = decimal.Parse(TxtToplam.Text);
                 repo.TUpdate(rezervasyon);
-                XtraMessageBox.Show("Ürün Başarıyla Güncellendi!", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                XtraMessageBox.Show("Rezervasyon Başarıyla Güncellendi!", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 this.Close();
             }
             catch (FormatException ex)

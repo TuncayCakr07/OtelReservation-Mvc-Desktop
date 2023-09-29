@@ -51,6 +51,7 @@ namespace Otelreservation.Entity
         public virtual DbSet<TblMesaj> TblMesaj { get; set; }
         public virtual DbSet<TblMesajGuest> TblMesajGuest { get; set; }
         public virtual DbSet<TblHakkimda> TblHakkimda { get; set; }
+        public virtual DbSet<TblAdmin> TblAdmin { get; set; }
     
         public virtual ObjectResult<OdaDurum_Result> OdaDurum()
         {

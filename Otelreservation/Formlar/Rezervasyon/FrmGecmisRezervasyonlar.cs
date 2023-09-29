@@ -20,7 +20,6 @@ namespace Otelreservation.Formlar.Rezervasyon
         DbOtelEntities db = new DbOtelEntities();
         private void FrmGecmisRezervasyonlar_Load(object sender, EventArgs e)
         {
-
             gridControl1.DataSource = (from x in db.TblRezervasyon
                                        select new
                                        {

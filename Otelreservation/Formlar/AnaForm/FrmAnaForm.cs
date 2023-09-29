@@ -46,6 +46,7 @@ namespace Otelreservation.Formlar.AnaForm
                                            x.TblDurum.DurumAd,
                                            x.Durum
                                        }).Where(y => y.Durum == 14).ToList();
+            gridView2.Columns["Durum"].Visible = false;
 
 
             //Ürün Stok Listesi

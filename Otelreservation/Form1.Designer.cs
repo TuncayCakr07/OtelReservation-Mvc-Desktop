@@ -171,7 +171,7 @@
             this.BtnUrunStokGrafigi,
             this.BtnOdaDurumGrafigi});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(24, 24, 24, 24);
+            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(24);
             this.ribbonControl1.MaxItemId = 51;
             this.ribbonControl1.MiniToolbars.Add(this.ribbonMiniToolbar1);
             this.ribbonControl1.Name = "ribbonControl1";
@@ -498,6 +498,7 @@
             this.BtnSifre.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnSifre.ImageOptions.Image")));
             this.BtnSifre.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnSifre.ImageOptions.LargeImage")));
             this.BtnSifre.Name = "BtnSifre";
+            this.BtnSifre.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnSifre_ItemClick);
             // 
             // BtnYetkiler
             // 
@@ -618,8 +619,8 @@
             // 
             this.BtnOdaDurumGrafigi.Caption = "Oda Durum Grafiği";
             this.BtnOdaDurumGrafigi.Id = 50;
-            this.BtnOdaDurumGrafigi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnGrafik1.ImageOptions.Image")));
-            this.BtnOdaDurumGrafigi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnGrafik1.ImageOptions.LargeImage")));
+            this.BtnOdaDurumGrafigi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnOdaDurumGrafigi.ImageOptions.Image")));
+            this.BtnOdaDurumGrafigi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnOdaDurumGrafigi.ImageOptions.LargeImage")));
             this.BtnOdaDurumGrafigi.Name = "BtnOdaDurumGrafigi";
             this.BtnOdaDurumGrafigi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnGrafik1_ItemClick);
             // 
@@ -831,6 +832,7 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " CakirSoft - Otel Rezervasyon Otomasyonu";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).EndInit();
             this.ResumeLayout(false);

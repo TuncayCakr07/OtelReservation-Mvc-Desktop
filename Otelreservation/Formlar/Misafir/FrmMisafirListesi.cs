@@ -40,5 +40,52 @@ namespace Otelreservation.Formlar.Misafir
             fr.id = int.Parse(gridView1.GetFocusedRowCellValue("MisafirID").ToString());
             fr.Show();
         }
+
+
+        private void SilMisafir(int MisafirID)
+        {
+            try
+            {
+                var Misafir = db.TblMisafir.FirstOrDefault(x => x.MisafirID == MisafirID);
+                if (Misafir != null)
+                {
+                    db.TblMisafir.Remove(Misafir);
+                    db.SaveChanges();
+                    MessageBox.Show("Misafir başarıyla silindi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Misafir bulunamadı.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Bir hata oluştu: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void silToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Misafiri silmek istediğinize emin misiniz?", "Silme Onayı", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (result == DialogResult.Yes)
+            {
+                int MisafirID = int.Parse(gridView1.GetFocusedRowCellValue("MisafirID").ToString());
+                SilMisafir(MisafirID);
+                FrmMisafirListesi_Load(sender, e);
+            }
+        }
+
+        private void düzenleToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            FrmMisafirKarti fr = new FrmMisafirKarti();
+            fr.id = int.Parse(gridView1.GetFocusedRowCellValue("MisafirID").ToString());
+            fr.Show();
+        }
+
+        private void vazgeçToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

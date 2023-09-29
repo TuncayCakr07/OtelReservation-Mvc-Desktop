@@ -38,14 +38,13 @@ namespace Otelreservation.Formlar.Misafir
                     TxtTelefon.Text = misafir.Telefon;
                     TxtMail.Text = misafir.Mail;
                     TxtAciklama.Text = misafir.Aciklama;
+                    lookUpEditSehir.EditValue = misafir.sehir;
+                    lookUpEditUlke.EditValue = misafir.Ulke;
+                    lookUpEditİlce.EditValue = misafir.ilce;
                     resim1 = misafir.KimlikFoto1;
                     resim2 = misafir.KimlikFoto2;
                     pictureEditKimlikOn.LoadAsync(resim1);
                     pictureEditKimlikArka.LoadAsync(resim2);
-                    lookUpEditSehir.EditValue = misafir.sehir;
-                    lookUpEditUlke.EditValue = misafir.Ulke;
-                    lookUpEditİlce.EditValue = misafir.ilce;
-
                 }
             }
             catch (Exception ex)
@@ -149,21 +148,31 @@ namespace Otelreservation.Formlar.Misafir
         {
             try
             {
-                t.AdSoyad = TxtAdSoyad.Text;
-                t.TC = TxtTcNo.Text;
-                t.Telefon = TxtTelefon.Text;
-                t.Mail = TxtMail.Text;
-                t.Adres = TxtAdres.Text;
-                t.Aciklama = TxtAciklama.Text;
-                t.Durum = 1;
-                t.sehir = int.Parse(lookUpEditSehir.EditValue.ToString());
-                t.ilce = int.Parse(lookUpEditİlce.EditValue.ToString());
-                t.Ulke = int.Parse(lookUpEditUlke.EditValue.ToString());
-                t.KimlikFoto1 = resim1;
-                t.KimlikFoto2 = resim2;
-                repo.TAdd(t);
-                XtraMessageBox.Show("Misafir Sisteme Başarıyla Kaydedildi!", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
+                if (pictureEditKimlikArka.Image!=null && pictureEditKimlikOn.Image!=null)
+                {
+                    // Resimler dolu ise kaydetme işlemi yap
+                    t.AdSoyad = TxtAdSoyad.Text;
+                    t.TC = TxtTcNo.Text;
+                    t.Telefon = TxtTelefon.Text;
+                    t.Mail = TxtMail.Text;
+                    t.Adres = TxtAdres.Text;
+                    t.Aciklama = TxtAciklama.Text;
+                    t.Durum = 1;
+                    t.sehir = int.Parse(lookUpEditSehir.EditValue.ToString());
+                    t.ilce = int.Parse(lookUpEditİlce.EditValue.ToString());
+                    t.Ulke = int.Parse(lookUpEditUlke.EditValue.ToString());
+                    t.KimlikFoto1 = resim1;
+                    t.KimlikFoto2 = resim2;
+                    repo.TAdd(t);
+                    XtraMessageBox.Show("Misafir Sisteme Başarıyla Kaydedildi!", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
+                else
+                {
+                    XtraMessageBox.Show("Kimlik fotoğraflarını eksiksiz ekleyin!", "Uyarı!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+
+
             }
             catch (FormatException ex)
             {

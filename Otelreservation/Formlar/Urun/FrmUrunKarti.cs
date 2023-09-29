@@ -71,6 +71,7 @@ namespace Otelreservation.Formlar.Urun
 
         private void BtnKaydet_Click(object sender, EventArgs e)
         {
+            
             try
             {
                 t.UrunAd=TxtUrunAdi.Text;

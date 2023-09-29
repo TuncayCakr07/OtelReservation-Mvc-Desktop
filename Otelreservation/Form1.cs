@@ -287,5 +287,18 @@ namespace Otelreservation
             fr.MdiParent = this;
             fr.Show();
         }
+
+        private void BtnSifre_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Formlar.Admin.FrmSifreİslemleri fr = new Formlar.Admin.FrmSifreİslemleri();
+            fr.Show();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            Formlar.AnaForm.FrmAnaForm fr = new Formlar.AnaForm.FrmAnaForm();
+            fr.MdiParent = this;
+            fr.Show();  
+        }
     }
 }

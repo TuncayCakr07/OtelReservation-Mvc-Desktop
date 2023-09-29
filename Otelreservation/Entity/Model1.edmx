@@ -30,6 +30,15 @@
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
+        <EntityType Name="TblAdmin">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Kullanici" Type="nvarchar" MaxLength="20" />
+          <Property Name="Sifre" Type="nvarchar" MaxLength="20" />
+          <Property Name="Rol" Type="char" MaxLength="1" />
+        </EntityType>
         <EntityType Name="TblBirim">
           <Key>
             <PropertyRef Name="BirimID" />
@@ -209,6 +218,7 @@
           <Property Name="Telefon" Type="nvarchar" MaxLength="50" />
           <Property Name="Aciklama" Type="nvarchar" MaxLength="500" />
           <Property Name="Durum" Type="int" />
+          <Property Name="Tutar" Type="decimal" Precision="18" Scale="2" />
         </EntityType>
         <EntityType Name="TblTelefon">
           <Key>
@@ -574,6 +584,7 @@
           <EntitySet Name="ilceler" EntityType="Self.ilceler" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="iller" EntityType="Self.iller" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblAdmin" EntityType="Self.TblAdmin" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblBirim" EntityType="Self.TblBirim" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblDepartman" EntityType="Self.TblDepartman" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblDurum" EntityType="Self.TblDurum" Schema="dbo" store:Type="Tables" />
@@ -1224,6 +1235,7 @@
           <EntitySet Name="TblMesajGuest" EntityType="DbOtelModel.TblMesajGuest" />
           <EntitySet Name="TblHakkimda" EntityType="DbOtelModel.TblHakkimda" />
           <FunctionImport Name="OdaDurum" ReturnType="Collection(DbOtelModel.OdaDurum_Result)" />
+          <EntitySet Name="TblAdmin" EntityType="DbOtelModel.TblAdmin" />
         </EntityContainer>
         <EntityType Name="ilceler">
           <Key>
@@ -1338,6 +1350,7 @@
           <Property Name="Kisi1" Type="Int32" />
           <Property Name="Kisi2" Type="Int32" />
           <Property Name="Kisi3" Type="Int32" />
+          <Property Name="Tutar" Type="Decimal" Precision="18" Scale="2" />
         </EntityType>
         <Association Name="FK_TblRezervasyon_TblDurum">
           <End Type="DbOtelModel.TblDurum" Role="TblDurum" Multiplicity="0..1" />
@@ -1445,6 +1458,15 @@
           <Property Type="String" Name="DurumAd" Nullable="true" MaxLength="20" />
           <Property Type="Int32" Name="Sayı" Nullable="true" />
         </ComplexType>
+        <EntityType Name="TblAdmin">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Kullanici" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Sifre" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Rol" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1651,6 +1673,7 @@
           <EntitySetMapping Name="TblRezervasyon">
             <EntityTypeMapping TypeName="DbOtelModel.TblRezervasyon">
               <MappingFragment StoreEntitySet="TblRezervasyon">
+                <ScalarProperty Name="Tutar" ColumnName="Tutar" />
                 <ScalarProperty Name="Kisi3" ColumnName="Kisi3" />
                 <ScalarProperty Name="Kisi2" ColumnName="Kisi2" />
                 <ScalarProperty Name="Kisi1" ColumnName="Kisi1" />
@@ -1747,6 +1770,16 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <EntitySetMapping Name="TblAdmin">
+            <EntityTypeMapping TypeName="DbOtelModel.TblAdmin">
+              <MappingFragment StoreEntitySet="TblAdmin">
+                <ScalarProperty Name="Rol" ColumnName="Rol" />
+                <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+                <ScalarProperty Name="Kullanici" ColumnName="Kullanici" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

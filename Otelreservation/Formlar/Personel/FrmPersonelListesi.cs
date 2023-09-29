@@ -40,5 +40,51 @@ namespace Otelreservation.Formlar.Personel
             fr.id=int.Parse(gridView1.GetFocusedRowCellValue("PersonelID").ToString());
             fr.Show();
         }
+
+        private void vazgeçToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void silToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Personeli silmek istediğinize emin misiniz?", "Silme Onayı", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (result == DialogResult.Yes)
+            {
+                int personelID = int.Parse(gridView1.GetFocusedRowCellValue("PersonelID").ToString());
+                SilPersoneli(personelID);
+                FrmPersonelListesi_Load(sender, e);
+            }
+        }
+
+        private void SilPersoneli(int personelID)
+        {
+            try
+            {
+                var personel = db.TblPersonel.FirstOrDefault(x => x.PersonelID == personelID);
+                if (personel != null)
+                {
+                    db.TblPersonel.Remove(personel);
+                    db.SaveChanges();
+                    MessageBox.Show("Personel başarıyla silindi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Personel bulunamadı.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Bir hata oluştu: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void düzenleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmPersonelKarti fr = new FrmPersonelKarti();
+            fr.id = int.Parse(gridView1.GetFocusedRowCellValue("PersonelID").ToString());
+            fr.Show();
+        }
     }
 }

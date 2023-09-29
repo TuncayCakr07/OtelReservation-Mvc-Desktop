@@ -33,5 +33,55 @@ namespace Otelreservation.Formlar.Rezervasyon
                                            x.TblDurum.DurumAd
                                        }).Where(y=> y.DurumAd=="Aktif").ToList();
         }
+        private void silToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Seçilen rezervasyonun ID'sini alın
+                int rezervasyonID = int.Parse(gridView1.GetFocusedRowCellValue("RezervasyonID").ToString());
+
+                // Silme işlemi
+                SilRezervasyon(rezervasyonID);
+
+                // Grid'i güncelleme veya yeniden yükleme işlemi
+                FrmAktifRezervasyonListesi_Load(sender, e);
+            }
+            catch (FormatException ex)
+            {
+                MessageBox.Show("Geçersiz bir değer girdiniz: " + ex.Message, "HATA!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Bir hata oluştu: " + ex.Message, "HATA!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void SilRezervasyon(int rezervasyonID)
+        {
+            try
+            {
+                // Rezervasyonu bul ve sil
+                var rezervasyon = db.TblRezervasyon.FirstOrDefault(x => x.RezervasyonID == rezervasyonID);
+                if (rezervasyon != null)
+                {
+                    db.TblRezervasyon.Remove(rezervasyon);
+                    db.SaveChanges();
+                    MessageBox.Show("Rezervasyon başarıyla silindi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Rezervasyon bulunamadı.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Bir hata oluştu: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void vazgeçToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
