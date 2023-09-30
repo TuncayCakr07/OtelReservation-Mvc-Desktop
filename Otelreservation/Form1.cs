@@ -1,8 +1,12 @@
-﻿using System;
+﻿using Otelreservation.Entity;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
+using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,7 +23,7 @@ namespace Otelreservation
 
         private void BtnDurum_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Formlar.Tanımlamalar.FrmDurum fr=new Formlar.Tanımlamalar.FrmDurum();
+            Formlar.Tanımlamalar.FrmDurum fr = new Formlar.Tanımlamalar.FrmDurum();
             fr.Show();
         }
 
@@ -79,13 +83,13 @@ namespace Otelreservation
 
         private void BtnPersonelKarti_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Formlar.Personel.FrmPersonelKarti fr= new Formlar.Personel.FrmPersonelKarti();
+            Formlar.Personel.FrmPersonelKarti fr = new Formlar.Personel.FrmPersonelKarti();
             fr.Show();
         }
 
         private void BtnPersonelListesi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Formlar.Personel.FrmPersonelListesi fr=new Formlar.Personel.FrmPersonelListesi();
+            Formlar.Personel.FrmPersonelListesi fr = new Formlar.Personel.FrmPersonelListesi();
             fr.MdiParent = this;
             fr.Show();
         }
@@ -298,7 +302,56 @@ namespace Otelreservation
         {
             Formlar.AnaForm.FrmAnaForm fr = new Formlar.AnaForm.FrmAnaForm();
             fr.MdiParent = this;
-            fr.Show();  
+            fr.Show();
+        }
+
+        private void BtnYetkiler_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Formlar.Admin.FrmSifreİslemleri fr = new Formlar.Admin.FrmSifreİslemleri();
+            fr.Show();
+        }
+
+        private void BtnYedekleme_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            SaveFileDialog save = new SaveFileDialog();
+            save.Filter = "Veri yedek dosyası|*.bak";
+            save.FileName = "Sonic_OtelRezervasyon_DataBaseBackup_" + DateTime.Now.ToString("yyyyMMddHHmmss") + ".bak";
+            if (save.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    Cursor.Current = Cursors.WaitCursor;
+                    if (File.Exists(save.FileName))
+                    {
+                        File.Delete(save.FileName);
+                    }
+                    var dbHedef = save.FileName;
+                    string dbKaynak = "Data Source=DESKTOP-2BCQ69S\\MSİ;Initial Catalog=DbOtel;Integrated Security=True";
+                    // SqlConnection kullanarak veritabanı yedeğini oluşturun
+                    using (SqlConnection sqlCon = new SqlConnection(dbKaynak))
+                    {
+                        sqlCon.Open();
+                        SqlCommand cmd = new SqlCommand();
+                        cmd.CommandText = "BACKUP DATABASE [" + sqlCon.Database + "] TO DISK='" + dbHedef + "'";
+                        cmd.Connection = sqlCon;
+                        cmd.ExecuteNonQuery();
+                        sqlCon.Close();
+                    }
+
+                    Cursor.Current = Cursors.Default;
+                    MessageBox.Show("Yedekleme İşlemi Tamamlandı.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Yedekleme işlemi sırasında hata oluştu: " + ex.Message, "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void BtnYardım_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Formlar.Araclar.FrmYardimTalebi fr = new Formlar.Araclar.FrmYardimTalebi();
+            fr.Show();
         }
     }
 }

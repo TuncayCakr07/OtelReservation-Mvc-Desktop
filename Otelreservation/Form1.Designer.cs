@@ -81,6 +81,7 @@
             this.BtnHizliBakis = new DevExpress.XtraBars.BarButtonItem();
             this.BtnUrunStokGrafigi = new DevExpress.XtraBars.BarButtonItem();
             this.BtnOdaDurumGrafigi = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnYedekleme = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonMiniToolbar1 = new DevExpress.XtraBars.Ribbon.RibbonMiniToolbar(this.components);
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -169,10 +170,11 @@
             this.BtnHakkimdaKarti,
             this.BtnHizliBakis,
             this.BtnUrunStokGrafigi,
-            this.BtnOdaDurumGrafigi});
+            this.BtnOdaDurumGrafigi,
+            this.BtnYedekleme});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.Margin = new System.Windows.Forms.Padding(24);
-            this.ribbonControl1.MaxItemId = 51;
+            this.ribbonControl1.MaxItemId = 52;
             this.ribbonControl1.MiniToolbars.Add(this.ribbonMiniToolbar1);
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.OptionsMenuMinWidth = 2455;
@@ -507,6 +509,7 @@
             this.BtnYetkiler.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnYetkiler.ImageOptions.Image")));
             this.BtnYetkiler.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnYetkiler.ImageOptions.LargeImage")));
             this.BtnYetkiler.Name = "BtnYetkiler";
+            this.BtnYetkiler.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnYetkiler_ItemClick);
             // 
             // BtnYardım
             // 
@@ -515,6 +518,7 @@
             this.BtnYardım.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnYardım.ImageOptions.Image")));
             this.BtnYardım.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnYardım.ImageOptions.LargeImage")));
             this.BtnYardım.Name = "BtnYardım";
+            this.BtnYardım.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnYardım_ItemClick);
             // 
             // BtnHesapmakinesi
             // 
@@ -623,6 +627,15 @@
             this.BtnOdaDurumGrafigi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnOdaDurumGrafigi.ImageOptions.LargeImage")));
             this.BtnOdaDurumGrafigi.Name = "BtnOdaDurumGrafigi";
             this.BtnOdaDurumGrafigi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnGrafik1_ItemClick);
+            // 
+            // BtnYedekleme
+            // 
+            this.BtnYedekleme.Caption = "Yedekleme";
+            this.BtnYedekleme.Id = 51;
+            this.BtnYedekleme.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnYedekleme.ImageOptions.Image")));
+            this.BtnYedekleme.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnYedekleme.ImageOptions.LargeImage")));
+            this.BtnYedekleme.Name = "BtnYedekleme";
+            this.BtnYedekleme.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnYedekleme_ItemClick);
             // 
             // ribbonMiniToolbar1
             // 
@@ -775,6 +788,7 @@
             this.ribbonPageGroup10.ItemLinks.Add(this.BtnSifre);
             this.ribbonPageGroup10.ItemLinks.Add(this.BtnYetkiler);
             this.ribbonPageGroup10.ItemLinks.Add(this.BtnYardım);
+            this.ribbonPageGroup10.ItemLinks.Add(this.BtnYedekleme);
             this.ribbonPageGroup10.Name = "ribbonPageGroup10";
             // 
             // ribbonPage8
@@ -920,6 +934,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage9;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup16;
         private DevExpress.XtraBars.BarButtonItem BtnOdaDurumGrafigi;
+        private DevExpress.XtraBars.BarButtonItem BtnYedekleme;
     }
 }
 

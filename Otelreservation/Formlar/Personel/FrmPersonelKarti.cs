@@ -99,23 +99,35 @@ namespace Otelreservation.Formlar.Personel
 
         private void BtnGuncelle_Click(object sender, EventArgs e)
         {
-            var deger = repo.Find(x => x.PersonelID == id);
-            deger.AdSoyad = TxtAdSoyad.Text;
-            deger.TC = TxtTcNo.Text;
-            deger.Adres = TxtAdres.Text;
-            deger.Telefon = TxtTelefon.Text;
-            deger.Mail = TxtMail.Text;
-            deger.İseGirisTarihi = DateTime.Parse(dateEditGiris.Text);
-            deger.Departman = int.Parse(lookUpEditDepartman.EditValue.ToString());
-            deger.Gorev = int.Parse(lookUpEditGorev.EditValue.ToString());
-            deger.Aciklama = TxtAciklama.Text;
-            deger.KimlikOn = pictureEditKimlikOn.GetLoadedImageLocation();
-            deger.KimlikArka = pictureEditKimlikArka.GetLoadedImageLocation();
-            deger.Sifre = TxtSifre.Text;
-            repo.TUpdate(deger);
-            XtraMessageBox.Show("Personel Bilgileri Güncellendi!", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            this.Close();
+            try
+            {
+                var deger = repo.Find(x => x.PersonelID == id);
+                deger.AdSoyad = TxtAdSoyad.Text;
+                deger.TC = TxtTcNo.Text;
+                deger.Adres = TxtAdres.Text;
+                deger.Telefon = TxtTelefon.Text;
+                deger.Mail = TxtMail.Text;
+                deger.İseGirisTarihi = DateTime.Parse(dateEditGiris.Text);
+                deger.Departman = int.Parse(lookUpEditDepartman.EditValue.ToString());
+                deger.Gorev = int.Parse(lookUpEditGorev.EditValue.ToString());
+                deger.Aciklama = TxtAciklama.Text;
+                deger.KimlikOn = pictureEditKimlikOn.GetLoadedImageLocation();
+                deger.KimlikArka = pictureEditKimlikArka.GetLoadedImageLocation();
+                deger.Sifre = TxtSifre.Text;
+                repo.TUpdate(deger);
+                XtraMessageBox.Show("Personel Bilgileri Güncellendi!", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
+            catch (FormatException ex)
+            {
+                XtraMessageBox.Show("Geçersiz bir değer girdiniz: " + ex.Message, "HATA!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show("Bir hata oluştu: " + ex.Message, "HATA!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
 
         private void pictureEditKimlikOn_EditValueChanged(object sender, EventArgs e)
         {
