@@ -29,5 +29,10 @@ namespace Otelreservation.Formlar.Admin
         public enum SplashScreenCommand
         {
         }
+
+        private void peImage_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

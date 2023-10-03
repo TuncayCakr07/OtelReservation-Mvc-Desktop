@@ -171,6 +171,16 @@ namespace Otelreservation.Formlar.Rezervasyon
                     var odadurum = repo2.Find(x => x.OdaID == rezervasyon.Oda);
                     odadurum.Durum = 3;
                     repo2.TUpdate(odadurum);
+                    rezervasyon.KasayaAktar = true;
+                    repo.TUpdate(rezervasyon);
+
+                    //Kasaya Aktarma İşlemi
+                    TblKasaHareket tkasa=new TblKasaHareket();
+                    Repository<TblKasaHareket> repokasa = new Repository<TblKasaHareket>();
+                    tkasa.Misafir = lookUpEditMisafir.Text;
+                    tkasa.Tarih = DateTime.Parse(DateTime.Now.ToShortDateString());
+                    tkasa.Tutar = decimal.Parse(TxtToplam.Text);
+                    repokasa.TAdd(tkasa);
                 }
                 rezervasyon.Misafir = int.Parse(lookUpEditMisafir.EditValue.ToString());
                 rezervasyon.GirisTarih = DateTime.Parse(dateEditGirisTarih.Text);

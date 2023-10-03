@@ -43,7 +43,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.progressBarControl.EditValue = 0;
             this.progressBarControl.Location = new System.Drawing.Point(32, 281);
-            this.progressBarControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.progressBarControl.Margin = new System.Windows.Forms.Padding(4);
             this.progressBarControl.Name = "progressBarControl";
             this.progressBarControl.Properties.ProgressAnimationMode = DevExpress.Utils.Drawing.ProgressAnimationMode.Cycle;
             this.progressBarControl.Size = new System.Drawing.Size(536, 15);
@@ -63,7 +63,7 @@
             this.peImage.Dock = System.Windows.Forms.DockStyle.Top;
             this.peImage.EditValue = ((object)(resources.GetObject("peImage.EditValue")));
             this.peImage.Location = new System.Drawing.Point(1, 1);
-            this.peImage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.peImage.Margin = new System.Windows.Forms.Padding(4);
             this.peImage.Name = "peImage";
             this.peImage.Properties.AllowFocused = false;
             this.peImage.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -74,6 +74,7 @@
             this.peImage.Properties.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.None;
             this.peImage.Size = new System.Drawing.Size(598, 218);
             this.peImage.TabIndex = 9;
+            this.peImage.EditValueChanged += new System.EventHandler(this.peImage_EditValueChanged);
             // 
             // labelCopyright
             // 
@@ -95,7 +96,7 @@
             this.Controls.Add(this.peImage);
             this.Controls.Add(this.labelStatus);
             this.Controls.Add(this.progressBarControl);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "SplashScreen1";
             this.Padding = new System.Windows.Forms.Padding(1);
             this.Text = "SplashScreen1";

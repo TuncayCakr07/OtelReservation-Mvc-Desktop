@@ -21,13 +21,14 @@ namespace Otelreservation.Entity
         public string Kisi { get; set; }
         public Nullable<int> Oda { get; set; }
         public string RezervasyonAdSoyad { get; set; }
-        public string Telefon { get; set; }
-        public string Aciklama { get; set; }
-        public Nullable<int> Durum { get; set; }
         public Nullable<int> Kisi1 { get; set; }
         public Nullable<int> Kisi2 { get; set; }
         public Nullable<int> Kisi3 { get; set; }
+        public string Telefon { get; set; }
+        public string Aciklama { get; set; }
+        public Nullable<int> Durum { get; set; }
         public Nullable<decimal> Tutar { get; set; }
+        public Nullable<bool> KasayaAktar { get; set; }
     
         public virtual TblDurum TblDurum { get; set; }
         public virtual TblMisafir TblMisafir { get; set; }

@@ -33,6 +33,7 @@ namespace Otelreservation.Formlar.Admin
                 if (kullanici != null)
                 {
                     Form1 fr = new Form1();
+                    fr.kullanicirolu= kullanici.Rol;
                     fr.Show();
                     this.Hide();
                 }

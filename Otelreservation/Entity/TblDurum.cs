@@ -26,10 +26,10 @@ namespace Otelreservation.Entity
             this.TblMisafir = new HashSet<TblMisafir>();
             this.TblOda = new HashSet<TblOda>();
             this.TblPersonel = new HashSet<TblPersonel>();
+            this.TblRezervasyon = new HashSet<TblRezervasyon>();
             this.TblTelefon = new HashSet<TblTelefon>();
             this.TblUrun = new HashSet<TblUrun>();
             this.TblUrunGrup = new HashSet<TblUrunGrup>();
-            this.TblRezervasyon = new HashSet<TblRezervasyon>();
         }
     
         public int DurumID { get; set; }
@@ -54,12 +54,12 @@ namespace Otelreservation.Entity
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TblPersonel> TblPersonel { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TblRezervasyon> TblRezervasyon { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TblTelefon> TblTelefon { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TblUrun> TblUrun { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TblUrunGrup> TblUrunGrup { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TblRezervasyon> TblRezervasyon { get; set; }
     }
 }

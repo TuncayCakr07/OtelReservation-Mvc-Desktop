@@ -1,4 +1,7 @@
-﻿using Otelreservation.Entity;
+﻿using DevExpress.XtraBars.Ribbon;
+using DevExpress.XtraPrinting;
+using Otelreservation.Entity;
+using Otelreservation.Formlar.Misafir;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,6 +12,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -297,9 +301,20 @@ namespace Otelreservation
             Formlar.Admin.FrmSifreİslemleri fr = new Formlar.Admin.FrmSifreİslemleri();
             fr.Show();
         }
-
+        public string kullanicirolu;
         private void Form1_Load(object sender, EventArgs e)
         {
+            if (kullanicirolu == "S")
+            {
+
+                ribbonPage6.Visible = true;
+
+            }
+            else
+            {
+                ribbonPage6.Visible = false;
+            }
+
             Formlar.AnaForm.FrmAnaForm fr = new Formlar.AnaForm.FrmAnaForm();
             fr.MdiParent = this;
             fr.Show();
@@ -351,6 +366,38 @@ namespace Otelreservation
         private void BtnYardım_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Formlar.Araclar.FrmYardimTalebi fr = new Formlar.Araclar.FrmYardimTalebi();
+            fr.Show();
+        }
+
+        private void BtnResepsiyonHareket_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Formlar.Kasa.FrmResepsiyonHareket fr = new Formlar.Kasa.FrmResepsiyonHareket();
+            fr.MdiParent = this;
+            fr.Show();
+        }
+
+        private void BtnYeniKasaKarti_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Formlar.Tanımlamalar.FrmKasa fr = new Formlar.Tanımlamalar.FrmKasa();
+            fr.Show();
+        }
+
+        private void BtnKasaCikisKarti_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Formlar.Kasa.FrmKasaCikisHaraketi fr = new Formlar.Kasa.FrmKasaCikisHaraketi();
+            fr.Show();
+        }
+
+        private void BtnKasaCikisHareketleri_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Formlar.Kasa.FrmKasaCikisHareketleri fr = new Formlar.Kasa.FrmKasaCikisHareketleri();
+            fr.MdiParent = this;
+            fr.Show();
+        }
+
+        private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Formlar.Raporlar.RaporFormu fr = new Formlar.Raporlar.RaporFormu();
             fr.Show();
         }
     }

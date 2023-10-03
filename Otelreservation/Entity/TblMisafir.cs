@@ -30,13 +30,13 @@ namespace Otelreservation.Entity
         public string KimlikFoto1 { get; set; }
         public string KimlikFoto2 { get; set; }
         public Nullable<int> Ulke { get; set; }
-        public Nullable<int> Durum { get; set; }
         public Nullable<int> sehir { get; set; }
         public Nullable<int> ilce { get; set; }
+        public Nullable<int> Durum { get; set; }
     
-        public virtual TblDurum TblDurum { get; set; }
         public virtual ilceler ilceler { get; set; }
         public virtual iller iller { get; set; }
+        public virtual TblDurum TblDurum { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TblRezervasyon> TblRezervasyon { get; set; }
     }

@@ -48,19 +48,43 @@
       <HintPath>..\packages\CefSharp.WinForms.116.0.230\lib\net462\CefSharp.WinForms.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.Charts.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.CodeParser.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.Desktop.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.DataAccess.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.DataAccess.v21.2.UI, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Diagram.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Images.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v21.2.Drawing, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.PivotGrid.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Printing.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v21.2.Export, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Utils.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v21.2.UI, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraBars.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraCharts.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v21.2.Extensions, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraCharts.v21.2.UI, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraCharts.v21.2.Wizard, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraDiagram.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraEditors.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGauges.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraNavBar.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPivotGrid.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraPrinting.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v21.2.CodeCompletion, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v21.2.Extensions, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraRichEdit.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeList.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -107,6 +131,12 @@
     <Compile Include="Entity\OdaDurum_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entity\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\sp_helpdiagrams_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entity\sysdiagrams.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -132,6 +162,12 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity\TblKasa.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TblKasaCikisHareket.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TblKasaHareket.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity\TblKur.cs">
@@ -248,6 +284,24 @@
     <Compile Include="Formlar\Grafikler\FrmGrafik2.Designer.cs">
       <DependentUpon>FrmGrafik2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formlar\Kasa\FrmKasaCikisHaraketi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Kasa\FrmKasaCikisHaraketi.Designer.cs">
+      <DependentUpon>FrmKasaCikisHaraketi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Kasa\FrmKasaCikisHareketleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Kasa\FrmKasaCikisHareketleri.Designer.cs">
+      <DependentUpon>FrmKasaCikisHareketleri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Kasa\FrmResepsiyonHareket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Kasa\FrmResepsiyonHareket.Designer.cs">
+      <DependentUpon>FrmResepsiyonHareket.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formlar\Misafir\FrmMisafirKarti.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -271,6 +325,12 @@
     </Compile>
     <Compile Include="Formlar\Personel\FrmPersonelListesi.Designer.cs">
       <DependentUpon>FrmPersonelListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Raporlar\RaporFormu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Raporlar\RaporFormu.Designer.cs">
+      <DependentUpon>RaporFormu.cs</DependentUpon>
     </Compile>
     <Compile Include="Formlar\Rezervasyon\FrmAktifRezervasyonListesi.cs">
       <SubType>Form</SubType>
@@ -398,6 +458,12 @@
     <Compile Include="Formlar\Urun\FrmUrunListesi.Designer.cs">
       <DependentUpon>FrmUrunListesi.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formlar\Urun\XtraReport1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Formlar\Urun\XtraReport1.Designer.cs">
+      <DependentUpon>XtraReport1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formlar\WebSite\FrmGelenMesajlar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -491,6 +557,15 @@
     <EmbeddedResource Include="Formlar\Grafikler\FrmGrafik2.resx">
       <DependentUpon>FrmGrafik2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Kasa\FrmKasaCikisHaraketi.resx">
+      <DependentUpon>FrmKasaCikisHaraketi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Kasa\FrmKasaCikisHareketleri.resx">
+      <DependentUpon>FrmKasaCikisHareketleri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Kasa\FrmResepsiyonHareket.resx">
+      <DependentUpon>FrmResepsiyonHareket.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formlar\Misafir\FrmMisafirKarti.resx">
       <DependentUpon>FrmMisafirKarti.cs</DependentUpon>
     </EmbeddedResource>
@@ -502,6 +577,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formlar\Personel\FrmPersonelListesi.resx">
       <DependentUpon>FrmPersonelListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Raporlar\RaporFormu.resx">
+      <DependentUpon>RaporFormu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formlar\Rezervasyon\FrmAktifRezervasyonListesi.resx">
       <DependentUpon>FrmAktifRezervasyonListesi.cs</DependentUpon>
@@ -565,6 +643,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formlar\Urun\FrmUrunListesi.resx">
       <DependentUpon>FrmUrunListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Urun\XtraReport1.resx">
+      <DependentUpon>XtraReport1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formlar\WebSite\FrmGelenMesajlar.resx">
       <DependentUpon>FrmGelenMesajlar.cs</DependentUpon>

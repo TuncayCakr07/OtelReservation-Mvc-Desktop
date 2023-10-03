@@ -70,6 +70,12 @@ namespace Otelreservation.Formlar.Urun
                 t.Miktar = decimal.Parse(TxtMiktar.Text);
                 t.Aciklama = TxtAciklama.Text;
                 t.Personel = int.Parse(lookUpEditPersonel.EditValue.ToString());
+
+                if (comboBox1.Text=="Giriş")
+                {
+                    t.BirimFiyat = decimal.Parse(TxtBirimFiyat.Text);
+                    t.ToplamFiyat = decimal.Parse(TxttoplamFiyat.Text);
+                }
                 repo.TAdd(t);
                 XtraMessageBox.Show("Ürün Hareketi Başarıyla Kaydedildi!", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 this.Close();
@@ -112,6 +118,19 @@ namespace Otelreservation.Formlar.Urun
                 // Diğer genel hata durumları için
                 XtraMessageBox.Show("Bir hata oluştu: " + ex.Message, "HATA!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void TxtMiktar_ValueChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.Text=="Giriş")
+            {
+                double miktar, birimfiyat, toplam;
+                miktar = Convert.ToDouble(TxtMiktar.Value);
+                birimfiyat = Convert.ToDouble(TxtBirimFiyat.Text);
+                toplam = miktar * birimfiyat;
+                TxttoplamFiyat.Text = toplam.ToString();
+            }
+
         }
     }
 }
